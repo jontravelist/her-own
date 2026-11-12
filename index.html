@@ -237,6 +237,30 @@ main{padding:0}
 @media (max-width:63.99rem){.cast{padding-left:3.6rem;gap:.4rem}.cast .chip{width:1.9rem;height:1.9rem}}
 @media (min-width:64rem){#toc{bottom:auto;top:1.2rem;left:auto;right:5.2rem;width:2.9rem;height:2.9rem}
   #menu{left:auto;right:1.5rem;bottom:auto;top:4.8rem}}
+
+/* the biscuit test */
+.flow .test{break-before:column;break-after:column;break-inside:avoid}
+.test .ask{font-family:"Young Serif",Georgia,serif;font-size:1.5rem;line-height:1.2;margin:.2rem 0 .8rem}
+.test > p{margin-bottom:.8em}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.opts button{font:inherit;border:0;padding:0;background:none;cursor:pointer;display:grid;gap:.3rem;color:var(--ink);text-align:left}
+.opts button::before{content:"";display:block;aspect-ratio:2.1;border-radius:7px 4px 8px 4px;background:var(--c) var(--tex) center/cover;transition:opacity .3s,transform .2s}
+.opts button span{font-family:Caveat,cursive;font-size:1.25rem;line-height:1.1}
+.opts button:focus-visible{outline:3px solid var(--note);outline-offset:3px}
+.opts button.no::before{opacity:.25}
+.opts button.no span{text-decoration:line-through;opacity:.5}
+.opts button.yes::before{box-shadow:0 0 0 3px var(--paper),0 0 0 6px var(--ink)}
+.test.hint .opts button:not(.no):not(.yes)[data-right]::before{animation:nudge 1s ease-in-out infinite}
+.test .say{min-height:2.6em;margin:.7rem 0 .3rem;font-style:italic;line-height:1.4}
+.won{display:flex;align-items:center;gap:.9rem;break-before:avoid;break-inside:avoid}
+.won[hidden]{display:none}
+.won svg{width:3.2rem;height:3.2rem;flex:none}
+.won p{margin:0;font-family:"Young Serif",Georgia,serif;font-size:1.1rem}
+.test.shake{animation:shake .35s}
+@keyframes nudge{50%{transform:scale(1.06)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+#menu button:disabled{opacity:.45;cursor:default}
+@media (prefers-reduced-motion:reduce){.test.shake,.test.hint .opts button::before{animation:none}}
 </style>
 </head>
 <body>
@@ -583,7 +607,26 @@ main{padding:0}
 
 <div class="col">
   <p>My mother never knitted a thing in her life.</p>
+</div>
 
+<section class="test" data-test="warmup" data-answer="giles">
+  <p>Mrs Pell looks me up and down.</p>
+  <p>We've one rule up here, she says. You don't own what you can't explain. So before you sit in Linda's chair, show me you can see.</p>
+  <p class="ask">Which of these is your Giles?</p>
+  <div class="opts">
+    <button data-who="dev" data-opt="dev" data-say="That's the lad from the paint shop, says Auntie Carol. Kinder. But no."><span>Traffic cone</span></button>
+    <button data-who="giles" data-opt="giles" data-say="Double cream, says Mrs Pell. Costs more and goes off quick. Sit down, then."><span>Double cream</span></button>
+    <button data-who="dad" data-opt="dad" data-say="That's your father, says Dot. Wash your hands."><span>Inside of a teapot</span></button>
+    <button data-who="mum" data-opt="mum" data-say="That's Linda, pet, says the nurse. That's whose chair it is."><span>Curry sauce</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>One biscuit in the tin. Turn the page.</p>
+  </div>
+</section>
+
+<div class="col">
   <div class="end">
     <p class="note">End of part one.</p>
     <button class="next" disabled>Part two is being written</button>
@@ -699,6 +742,11 @@ function layout(){
 function turn(dir, auto){
   const to = page + dir;
   if (busy || to < 0 || to >= pages) return;
+  if (dir > 0 && to > maxPage()){
+    const t = tests.find(t => pageOf(t) === page);
+    if (t){ t.classList.remove('shake'); void t.offsetWidth; t.classList.add('shake'); t.querySelector('.say').textContent = t.querySelector('.say').textContent || 'Mrs Pell is waiting.'; }
+    return;
+  }
   closeCard(); if (typeof closeMenu === 'function') closeMenu();
   if (!auto) setTimeout(() => window.seekToPage && seekToPage(), 0);
   if (still.matches){ page = to; show(); return; }
@@ -805,6 +853,37 @@ listen.addEventListener('click', e => {
   if (u.t === track && voice.duration){ voice.currentTime = at; voice.play(); } else load(u.t, at, true);
 });
 
+// ---- the biscuit test: one question at a chapter's end; the pages after it stay shut until it's answered ----
+const tests = [...flow.querySelectorAll('.test')];
+let passed = {};
+try { passed = JSON.parse(localStorage.getItem('own.tests') || '{}'); } catch (e) {}
+function maxPage(){
+  const t = tests.find(t => !passed[t.dataset.test]);
+  return t ? pageOf(t) : pages - 1;
+}
+tests.forEach(t => {
+  const say = t.querySelector('.say'), won = t.querySelector('.won'), opts = [...t.querySelectorAll('.opts button')];
+  const right = opts.find(b => b.dataset.opt === t.dataset.answer); right.dataset.right = '';
+  let wrong = 0;
+  const finish = () => {
+    say.textContent = right.dataset.say; won.hidden = false; t.classList.remove('hint');
+    opts.forEach(b => { b.disabled = true; b.classList.add(b === right ? 'yes' : 'no'); });
+  };
+  if (passed[t.dataset.test]) finish();
+  opts.forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    say.textContent = b.dataset.say;
+    if (b === right){
+      passed[t.dataset.test] = true;
+      try { localStorage.setItem('own.tests', JSON.stringify(passed)); } catch (e) {}
+      finish();
+    } else {
+      b.classList.add('no'); b.disabled = true;
+      if (++wrong >= 2) t.classList.add('hint');
+    }
+  }));
+});
+
 // ---- chapters menu ----
 const toc = document.getElementById('toc'), menu = document.getElementById('menu');
 const chapters = [{no: 'Chapter one', title: 'Vinegar', el: flow.querySelector('.cold')},
@@ -817,6 +896,7 @@ function openMenu(){
     const b = document.createElement('button');
     b.innerHTML = `<small>${c.no}</small><b>${c.title}</b>`;
     if (c === here) b.setAttribute('aria-current', 'true');
+    if (pageOf(c.el) > maxPage()){ b.disabled = true; b.querySelector('small').textContent += ' (answer Mrs Pell first)'; }
     b.addEventListener('click', e => {
       e.stopPropagation(); closeMenu(); closeCard();
       page = pageOf(c.el); show(); seekToPage();
@@ -835,7 +915,7 @@ addEventListener('resize', layout);
 layout();
 try {
   const i = parseInt(localStorage.getItem('own.ch1.at'), 10);
-  if (i > 0 && units[i]){ page = pageOf(units[i].el); show(); }
+  if (i > 0 && units[i]){ page = Math.min(pageOf(units[i].el), maxPage()); show(); }
 } catch (e) {}
 booted = true;
 document.fonts && document.fonts.ready.then(layout);
