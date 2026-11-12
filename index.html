@@ -242,9 +242,10 @@ main{padding:0}
 .flow .test{break-before:column;break-after:column;break-inside:avoid}
 .test .ask{font-family:"Young Serif",Georgia,serif;font-size:1.5rem;line-height:1.2;margin:.2rem 0 .8rem}
 .test > p{margin-bottom:.8em}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.opts button{font:inherit;border:0;padding:0;background:none;cursor:pointer;display:grid;gap:.3rem;color:var(--ink);text-align:left}
-.opts button::before{content:"";display:block;aspect-ratio:2.1;border-radius:7px 4px 8px 4px;background:var(--c) var(--tex) center/cover;transition:opacity .3s,transform .2s}
+.opts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.8rem}
+.opts button{font:inherit;border:0;padding:0;background:none;cursor:pointer;display:block;min-width:0;width:100%;color:var(--ink);text-align:left}
+.opts button span{display:block;margin-top:.3rem}
+.opts button::before{content:"";display:block;aspect-ratio:2.1;border-radius:7px 4px 8px 4px;background:var(--c) var(--tex, none) center/cover;transition:opacity .3s,transform .2s}
 .opts button span{font-family:Caveat,cursive;font-size:1.25rem;line-height:1.1}
 .opts button:focus-visible{outline:3px solid var(--note);outline-offset:3px}
 .opts button.no::before{opacity:.25}
@@ -261,6 +262,34 @@ main{padding:0}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 #menu button:disabled{opacity:.45;cursor:default}
 @media (prefers-reduced-motion:reduce){.test.shake,.test.hint .opts button::before{animation:none}}
+
+/* ledger variations */
+.lhead{font-family:Caveat,cursive;font-size:1.45rem;color:#2B4FB3;line-height:1.9rem;border-bottom:2px solid #2B4FB3;margin-bottom:.4rem}
+.ledger.wide .lrow{grid-template-columns:9.4rem 1fr}
+.lnote{font-family:Caveat,cursive;font-size:1.15rem;color:#C0392B;text-align:right;line-height:1.9rem;transform:rotate(-1.5deg)}
+.lkey{display:grid;grid-template-columns:2.6rem 1fr;gap:.7rem;align-items:start;min-height:1.9rem;padding:.25rem 0}
+.lkey i{height:1.2rem;margin-top:.25rem;border-radius:2px;filter:url(#rough);background:repeating-linear-gradient(115deg,var(--c) 0 2px,color-mix(in srgb,var(--c) 62%,transparent) 2px 4px)}
+.lkey span{font-family:Caveat,cursive;font-size:1.25rem;line-height:1.25;color:#2B4FB3}
+.lkey b{font-weight:500;display:block;color:var(--ink)}
+.lline{display:grid;grid-template-columns:1.5fr .7fr 1fr 1fr;gap:.4rem;font-family:Caveat,cursive;font-size:1.3rem;line-height:1.9rem;color:#6C6A8C}
+.lline.red{color:#C0392B;font-size:1.55rem;font-weight:500;transform:rotate(-.6deg)}
+.lline em{font-style:normal;color:#D9A21A}
+/* text messages */
+.txt,.sms .say:not(:empty),.msg{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.95rem;line-height:1.4;font-style:normal;
+  background:var(--paper-deep);border-radius:14px 14px 14px 3px;padding:.6rem .85rem;max-width:88%;width:fit-content}
+.sms .say{min-height:0}
+.sms .say:empty{display:none}
+.msg{background:color-mix(in srgb,var(--giles) 55%,var(--paper))}
+.opts button span{line-height:1.05}
+.note.small{font-size:.8rem;margin-top:1.2rem}
+
+/* keep a whole test on one page */
+.test.sms .opts button::before{aspect-ratio:3.1}
+.test.sms .ask{font-size:1.3rem;margin:.1rem 0 .6rem}
+.test.sms > p{margin-bottom:.55em}
+.test .say{break-inside:avoid}
+.test.sms .won p{font-size:1rem}
+.test.sms .won svg{width:2.4rem;height:2.4rem}
 </style>
 </head>
 <body>
@@ -626,10 +655,341 @@ main{padding:0}
   </div>
 </section>
 
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Part two</p>
+  <h2>Pin money</h2>
+</section>
+<div class="col">
+  <div class="memory">
+    <p>When I was nine I found ten pounds in the tea caddy.</p>
+    <p>It was under the bags, folded down to the size of a stamp. I thought I had found treasure. I ran it through to the shop holding it up, shouting, Mum, Mum, look.</p>
+    <p>She was at the range. Dad was at the till.</p>
+    <p>She didn't look at me. She looked at him. Then she took it out of my hand, quick, the way you'd take a knife off a toddler, and said, that's the milk money, I wondered where I'd put that. And she laughed, and put it in the till in front of him, and shut the drawer.</p>
+    <p>That night she didn't come and say goodnight.</p>
+    <p>I looked in the tea caddy every day for a year. There was never anything in it again but tea.</p>
+  </div>
+</div>
+
+<section class="chap">
+  <p class="chapno">Chapter four</p>
+  <h2>Biscuits</h2>
+</section>
+<div class="col">
+  <h2>Seven chairs</h2>
+  <p>I have brought shortbread. It was that or Jaffa Cakes, and I didn't know where the room stood on whether a Jaffa Cake is a biscuit.</p>
+  <p>Nobody takes one. They are all looking at me, and I am looking at the number.</p>
+  <p>A hundred and thirty-one thousand pounds, I say. Whose is it?</p>
+  <p>Ours, says Mrs Pell.</p>
+  <p>Whose, ours?</p>
+  <p>She points round the table with a teaspoon. Me. Dot. Bernadette. Priti. Kayleigh. Your Auntie Carol, God help us. And your mother. Twenty pounds a month each since March 1999. Kayleigh's only been coming since her nan passed and left her the chair.</p>
+  <p>I do it in my head. I'm not quick. But twenty pounds a month doesn't come to a hundred and thirty-one thousand. It doesn't come to half that.</p>
+  <p>No, says Priti, who hasn't looked up from her laptop. It comes to about forty-six thousand. The rest it made by itself.</p>
+  <p>Made how?</p>
+  <p>And six women who have known me since I was in a pram all breathe in at once, like a choir.</p>
+  <p>One at a time, says Mrs Pell. And plain. That's the rule, and it was your mother's. Nobody up here says a word they couldn't say in the launderette. If you can't explain it to Dot, you've no business putting your twenty pounds in it.</p>
+  <p>I'm sat here, says Dot.</p>
+
+  <h2>A hundred pieces</h2>
+  <p>Start with your father's shop, says Mrs Pell. Who owns it?</p>
+  <p>Dad.</p>
+  <p>How much of it?</p>
+  <p>All of it.</p>
+  <p>Say it was cut up. Say it was a hundred pieces, like a tray of parkin. How many has he got?</p>
+  <p>A hundred.</p>
+  <p>And Linda. Thirty-five years at that range, six days a week, burns up both arms. How many pieces did she have?</p>
+  <p>I don't say anything. The gas fire ticks.</p>
+  <p>None, says Auntie Carol. She had none. She had an apron.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger wide" role="img" aria-label="A ledger page headed Harrow's Fish Bar, 100 pieces. Keith has a bar that fills the whole row, marked 100. Linda has an empty row, marked 0.">
+    <div class="lhead">Harrow's Fish Bar. 100 pieces.</div>
+    <div class="lrow"><span>Keith, 100</span><i style="--w:100%;--c:#7A4A2E"></i></div>
+    <div class="lrow"><span>Linda, 0</span><i style="--w:0%;--c:#EBA91A"></i></div>
+  </div>
+  <figcaption>The first page of the book, 1999. I think it's the angriest thing she ever drew.</figcaption>
+</figure>
+
+<div class="col">
+  <p>That, says Mrs Pell, is the difference between working in a thing and owning a bit of it. You can work in a business your whole life and all it owes you is a wage, if you're lucky. Own a piece of it and it owes you a piece of whatever it makes. Whether you turned up or not. Whether you're asleep.</p>
+  <p>That's a share. That's all a share is. A piece of a business, with your name on.</p>
+  <p>But you can't buy a piece of Dad's shop, I say.</p>
+  <p>No. He's not selling. But the big firms do. A firm wants money, to build a new shop or a factory, so it cuts itself into pieces, millions of them, and sells them to anybody who'll have one. After that the pieces get bought and sold all day long between strangers. That's the stock market. It's only a market. People swapping pieces of businesses. There's no room any more, it's all on Priti's laptop.</p>
+  <p>So we own a piece of what?</p>
+  <p>The supermarket, for one. The big one on the ring road. That's the blue. Monday's sea, your mother called it, because it's dull and it's always there. I've shopped in it forty years. I know what's in my trolley and I know what's in everybody else's. So I thought, why am I only ever giving them money? Why aren't they giving me some?</p>
+  <p>How big a piece?</p>
+  <p>Priti turns the laptop round. If the supermarket was your father's tray of parkin, she says, we own a crumb you would need tweezers for. But it's a real crumb. When they make a profit, a crumb of it is ours. When they have a bad year, so do we.</p>
+  <p>Tell her about the price, says Bernadette. She was a nurse for forty-one years and she says it the way you'd say, sharp scratch.</p>
+  <p>The price of a piece goes up and down every day, says Mrs Pell. Not because the supermarket has changed since yesterday. Because people have changed their minds about what a piece is worth. They get excited, it goes up. They get frightened, it goes down. Some years it has gone down by a third and sat there. You can lose money. I want you to hear me say that. Anybody who tells you different is selling something.</p>
+  <p>We lost a fortune in 2008, says Carol, cheerfully.</p>
+  <p>We lost it on paper, says Priti.</p>
+  <p>It felt like a fortune, says Carol.</p>
+
+  <h2>The chair</h2>
+  <p>Your mother's piece of that book is one seventh, says Mrs Pell. A bit less. We'll come to why. She has left it to you. There's a will, a proper one, a solicitor in Scarborough and not round here. Your father doesn't know there's a will and he doesn't know there's a book. I'd take it as a kindness if it stayed that way until it's proved.</p>
+  <p>I think about Dad at the Anchor with his glass. Not a penny, not a paper.</p>
+  <p>How much, I say. I'm ashamed of how fast I say it.</p>
+  <p>Priti doesn't need to look. Eleven thousand, two hundred and eight pounds, forty pence. As of this afternoon.</p>
+  <p>I owe eleven thousand pounds. I owe it to three different cards, and one of them rings me. I sit down in my mother's chair, on my mother's cushion, without deciding to.</p>
+  <p>There's a condition, says Mrs Pell.</p>
+  <p>Of course there is.</p>
+  <p>You're not to have it for a year. You're to come up here every Thursday and sit there and learn what's in that book, until you can explain every colour of it to Dot. Then it's yours. Sell it. Keep it. Set fire to it. But not before.</p>
+  <p>That's mad. I live in Leeds.</p>
+  <p>There's a train, says Dot.</p>
+  <p>Why would she do that?</p>
+  <p>Nobody answers. Then Auntie Carol says, to the teapot: because she had it all handed to her once. A wage, a roof, a husband. She said it's not the same as having it. She said you'd know the difference by the end of a year or you wouldn't, and either way it'd be you that knew.</p>
+  <p>I look at the shortbread. Somebody ought to eat some.</p>
+  <p>I take a piece. Then Dot takes a piece, and breaks it in half, and that is the meeting started.</p>
+
+  <h2>The 21:14</h2>
+  <p>On the last train I flatten out the paper bag the shortbread came in, and I find a biro, and I draw them. Six women and a teapot. It takes eleven minutes. Dot comes out best.</p>
+  <p>The table's wrong. It's on the back of a paper bag. It is the first thing I have drawn in two years.</p>
+</div>
+
+<figure class="fig">
+  <img class="painting" src="art/club-sketch.jpg" onerror="this.closest('figure').hidden=true" width="1360" height="768" alt="A blue biro sketch on a brown paper bag of six older women round a small table with a teapot, and one empty chair." draggable="false">
+  <figcaption><b>The Thursday club.</b> Biro on a paper bag. I didn't scrape anybody's face off.</figcaption>
+</figure>
+
+<section class="test sms" data-test="share" data-answer="market">
+  <p>My phone goes before we're past the gasworks. A number I don't know. Mrs Pell has plainly never sent a text before.</p>
+  <p class="txt">ONE THING TO SEE IF IT STUCK</p>
+  <p class="ask">Which of these could you buy a piece of tomorrow morning?</p>
+  <div class="opts">
+    <button style="--c:#7A4A2E" data-opt="shop" data-say="NOT UNLESS KEITH IS SELLING AND KEITH HAS NEVER SOLD A THING HE COULD KEEP. THIS IS CAROL"><span>Harrow's Fish Bar</span></button>
+    <button style="--c:#2E73C8" data-opt="market" data-say="THE SUPERMARKET. IT SOLD ITSELF IN PIECES YEARS AGO AND THEY ARE STILL GOING ROUND. THAT IS A SHARE. BISCUIT."><span>The supermarket on the ring road</span></button>
+    <button style="--c:#9DB7E8" data-opt="laundry" data-say="YOU COULD ASK. I WOULD LAUGH."><span>Mrs Pell's launderette</span></button>
+    <button style="--c:#2FA39A" data-opt="pier" data-say="THE COUNCIL OWNS THE PIER AND THE COUNCIL IS WELCOME TO IT. DOT"><span>The pier</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Two biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter five</p>
+  <h2>The gas pays for the gas</h2>
+</section>
+<div class="col">
+  <h2>A class</h2>
+  <p>I tell Giles I have been asked to teach a class. Thursday evenings, a community thing, up the coast. Life drawing for the over-sixties.</p>
+  <p>It comes out whole, like something I'd had ready. That's what frightens me. I don't even have to reach for them any more.</p>
+  <p>He is so pleased. He says it will be good for me, to give something back. He buys me a tin of pencils for it, the German ones, forty pounds. I put them next to the jar.</p>
+  <p>I am now lying to him about where I go in the day and where I go at night. The only time I am where he thinks I am, I'm asleep.</p>
+
+  <h2>Dot</h2>
+  <p>The second Thursday, Dot has the floor.</p>
+  <p>Dot Hargreaves is eighty-six and wears two cardigans, and I have thought all my life that she was away with the fairies. She used to give me a boiled sweet in church and call me Linda.</p>
+  <p>I've the gas, she says.</p>
+  <p>You've what?</p>
+  <p>The gas company. They sold it off in nineteen eighty-six, there were adverts on the telly. My Ron said it was a con and I said, well, I'm having some. I had two hundred pounds' worth out of the holiday tin. I have never sold one. Forty years.</p>
+  <p>And what has it done?</p>
+  <p>Two things, pet. That's what she's to learn tonight, isn't it, Maureen? The two things.</p>
+  <p>Dot holds up one finger. It's like being taught by a very small bishop.</p>
+  <p>One. Every year the gas company makes its money. It keeps some back for pipes and that. What's left, it shares out among the people who own it, so much a share. It comes twice a year, into the bank, and I have done nothing for it but own the thing and not sell it. That's called a dividend. I call it my divi.</p>
+  <p>The gas pays for the gas, says Carol.</p>
+  <p>The gas pays for the gas, says Dot, with dignity. My divi off the gas company has paid my gas bill, near enough, since 1991. I think that's very funny. Ron never did.</p>
+  <p>Second finger.</p>
+  <p>Two. The pieces themselves are worth more than I gave for them. A lot more. But that's only a number until I sell them. And once I've sold them I've not got them, and then there's no more divi. So I look at the number at Christmas and I say, very nice, and I leave it be.</p>
+  <p>So a share can pay you two ways, I say. I say it slowly, like putting my weight on ice. It can pay you a bit of the profit every year, while you keep it. Or it can be worth more than you paid, but you only get that when you let go of it.</p>
+  <p>Six women look at each other.</p>
+  <p>She's quicker than Linda was, says Dot.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger wide" role="img" aria-label="A ledger page for the supermarket. Three bars: put in 1,000 pounds, in blue; worth now 1,900 pounds, a longer blue bar; paid us since 640 pounds, a yellow bar. A note says the yellow is not promised.">
+    <div class="lhead">Monday's sea. The supermarket.</div>
+    <div class="lrow"><span>put in £1,000</span><i style="--w:44%;--c:#2E73C8"></i></div>
+    <div class="lrow"><span>worth now £1,900</span><i style="--w:84%;--c:#2E73C8"></i></div>
+    <div class="lrow"><span>paid us £640</span><i style="--w:28%;--c:#EBA91A"></i></div>
+    <div class="lnote">the yellow is not promised</div>
+  </div>
+  <figcaption>Blue is what our pieces are worth. Yellow is what they've paid out in dividends, without us selling a thing. She did the yellow in her own colour.</figcaption>
+</figure>
+
+<div class="col">
+  <p>Is it always paid? I say. The dividend.</p>
+  <p>No, says Bernadette. Sharp scratch. A firm has a bad year, it can cut it, or stop it altogether. A lot of them stopped in 2020. Dot wore her coat indoors.</p>
+  <p>I did not.</p>
+  <p>You had a hat on at the meeting, Dot.</p>
+  <p>And some never pay one at all, says Kayleigh. She has pink hair and yellow nails and she has been waiting. Mine doesn't. Mine's the pink. It's an app. It has never paid a penny, it puts everything back into getting bigger. So the only way I make owt is if the price goes up. Which it has. It's gone from two pound to nine.</p>
+  <p>On paper, says everybody.</p>
+  <p>On paper, says Kayleigh. God.</p>
+
+  <h2>For paints</h2>
+  <p>I've been working up to it all night and it comes out sideways.</p>
+  <p>The twenty pounds, I say. Every month. Was that.</p>
+  <p>That was her divi, says Mrs Pell. The rest of us leave ours in. It goes back in the pot and buys more pieces, and those pieces pay a divi, and that buys more. That's how forty-six thousand gets to be a hundred and thirty-one. Your mother took hers out. Twenty pounds, the first of the month, cash, for fifteen years. Some years her share didn't even make that much, and she took it anyway. It's why hers is the smallest in the book.</p>
+  <p>How much smaller?</p>
+  <p>Priti looks at me over the laptop. For the first time she looks sorry.</p>
+  <p>If she had left it in, she says, your mother's share would be about twice what it is.</p>
+  <p>There's a jar on a shelf in Leeds with five hundred pounds in it that I couldn't bring myself to spend. And there's three thousand more that I could, on cobalt and canvas and one very bad easel.</p>
+  <p>She halved what she had, to keep me in paint.</p>
+  <p>She knew what she was doing, says Carol. Don't you dare feel bad about it. She called it the best return in the book.</p>
+
+  <h2>The top road</h2>
+  <p>Sam is outside when I come down. He's in the van with the engine running and the window down, looking straight ahead like a man waiting for a ferry.</p>
+  <p>Last train's the 21:14, he says. You'll not make it on foot.</p>
+  <p>Did Mrs Pell ring you?</p>
+  <p>She texted me. In capitals.</p>
+  <p>I get in. It smells of fish, and of the pine thing hanging off the mirror, and under that it smells of him, and I look out of my window very hard.</p>
+  <p>My painting is taped to the dashboard. It's a small one, six inches. The harbour wall. Next to it there's a child's drawing of a horse, or a dog, with seven legs.</p>
+  <p>You kept it, I say.</p>
+  <p>You gave it me.</p>
+  <p>I gave it you to get rid of it.</p>
+  <p>Well, he says. That didn't work.</p>
+  <p>He drives. Not towards the station. Up the hill, to the top road, where you can see the whole town laid out and the pier going off into the black.</p>
+  <p>Sam.</p>
+  <p>Two minutes. He stops by the bus shelter. She sat where you're sat, he says. Your mum. Most Thursdays, six or seven years. She'd come down Pell's back stairs and I'd run her up here, so she could walk down past the church hall and your dad would see her coming from the right direction. With her knitting bag.</p>
+  <p>What was in the knitting bag?</p>
+  <p>Knitting. She got it from the hospice shop. Same half a scarf for seven years.</p>
+  <p>I laugh. It comes out of me like something breaking. Then I'm not laughing, and he doesn't touch me, and it would be easier if he did.</p>
+  <p>Why you? I say. Of all people. After what we did.</p>
+  <p>He takes a while.</p>
+  <p>She came and found me, he says. After. When Jess had me out of the house and I was sleeping in this. She knocked on that window with a flask. She said, I'm not here to tell you you're forgiven, Samuel, that's not mine to say. I'm here because you look how I feel.</p>
+  <p>He turns the key.</p>
+  <p>I never knew what she meant, he says. I do now. I think she had been planning to go for a long time.</p>
+  <p>Go where?</p>
+  <p>The station is lit up below us. He looks at that, and not at me.</p>
+  <p>You'll miss your train, he says.</p>
+  <p>I make the 21:14 with a minute in hand. I text Giles: class went well.</p>
+</div>
+
+<section class="test sms" data-test="dividend" data-answer="divi">
+  <p>The phone goes at Malton. Capitals again.</p>
+  <p class="txt">DOT'S GAS COMPANY HAS A GOOD YEAR</p>
+  <p class="ask">Which of these puts money in her purse without her selling a thing?</p>
+  <div class="opts">
+    <button style="--c:#2E73C8" data-opt="price" data-say="NOT TILL SHE SELLS. IT IS ONLY A NUMBER. THIS IS DOT. HELLO PET"><span>The price going up</span></button>
+    <button style="--c:#C9BEDC" data-opt="bill" data-say="THAT GOES THE OTHER WAY LOVE. CAROL"><span>Her gas bill</span></button>
+    <button style="--c:#EBA91A" data-opt="divi" data-say="THE DIVIDEND. A BIT OF THE PROFIT PAID TO WHOEVER OWNS A PIECE. BISCUIT."><span>The dividend</span></button>
+    <button style="--c:#F3EFE2" data-opt="letter" data-say="SHE GETS ONE EVERY YEAR. IT HAS NEVER HAD MONEY IN IT. BERNADETTE"><span>A letter from the chairman</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Three biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter six</p>
+  <h2>All one colour</h2>
+</section>
+<div class="col">
+  <h2>The row</h2>
+  <p>The third Thursday there's a row.</p>
+  <p>It starts because I ask a simple question. If the gas company pays you every year and Kayleigh's app never pays you at all, why would anybody want Kayleigh's?</p>
+  <p>Thank you, says Dot.</p>
+  <p>Because it's growing, says Kayleigh, loudly. Yours is a hundred years old. It's got all the customers it's ever going to get. Mine had a million people on it last year and it's got four million now. It doesn't pay out because it's spending every penny on getting bigger. If it gets big enough, a piece of it will be worth ten times what I paid.</p>
+  <p>And if it doesn't? says Bernadette.</p>
+  <p>Then it's worth nowt, says Kayleigh. I know. I've been told. I only put in what I could stand to lose. That's the rule for mine.</p>
+  <p>That's a growth share, says Mrs Pell to me, under the noise. A young firm, fast, pays you nothing now on the promise of a lot later. It might be the best thing in the book. It might go to nothing. You tend to find out all at once.</p>
+  <p>And Dot's?</p>
+  <p>Dot's is an income share. An old firm, slow and steady, that pays you a divi like a clock. We've one like it in the book. The yellow, Good butter. It's an insurance firm, dull as a bus timetable. It will never be worth ten times. It will likely never be worth nothing, either.</p>
+  <p>Boring, says Kayleigh.</p>
+  <p>I've had forty years of boring, says Dot. It has kept me very warm.</p>
+
+  <h2>Carol</h2>
+  <p>Carol is next, and Carol stands up to do hers, in the pink mac, like a turn.</p>
+  <p>Mine's the red. Saveloy. It's a firm that builds houses. Now. When does a person buy a house?</p>
+  <p>When they've got money, I say.</p>
+  <p>When they've got money and they're not frightened. When times are good, everybody wants a house. The firm can't build them fast enough, it makes a fortune, a piece of it goes through the roof. Then times turn. Nobody's buying. Same firm, same bricks, and it's on its knees. Up and down like a bride's nightie, with whatever the country is doing. That's called cyclical.</p>
+  <p>It's the same with the nail bar, she says. I'm cyclical myself. The minute people get worried, the first thing they stop is their nails. I can tell you there's a recession coming six months before the news can.</p>
+  <p>She lost half her own money in housebuilders in 2008, says Priti, not looking up.</p>
+  <p>I lost half my own money in housebuilders in 2008, Carol agrees. I'd put the lot in. All one colour. I'll tell you about that another night, when I've had a drink.</p>
+
+  <h2>Bernadette</h2>
+  <p>Bernadette doesn't stand. Bernadette has never needed to.</p>
+  <p>The green and the teal, she says. A firm that makes medicines, and the water company. I'll tell you what forty-one years on the wards taught me. People are ill in a boom and they're ill in a slump. They wash. They drink water. They buy toothpaste. They do not say, there's a recession on, I'll leave my blood pressure a year.</p>
+  <p>So when everything else falls.</p>
+  <p>These fall less. They don't shoot up, either. Nobody gets excited about water. They call them defensive. I think of them as the ones who turn up for the night shift.</p>
+  <p>That's four kinds, I say. Fast ones that don't pay. Slow ones that do. Ones that go up and down with the weather. And ones that turn up whatever.</p>
+  <p>And big and small, says Mrs Pell. A great big old firm is harder to knock over than a little new one. The little one can double quicker and it can vanish quicker. That's all. That's the lot. You now know more than your father.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger" role="img" aria-label="A handwritten key from the inside cover of the ledger. Pink, Rock: young and fast, pays nothing yet. Yellow, Good butter: old and steady, pays like a clock. Red, Saveloy: up and down with the weather. Green and teal, Nan's hallway and Pier roof: turns up whatever. Orange, Slow orange: a question mark.">
+    <div class="lkey"><i style="--c:#F26FA6"></i><span><b>Rock</b> young and fast. pays nothing yet.</span></div>
+    <div class="lkey"><i style="--c:#E9C95A"></i><span><b>Good butter</b> old and steady. pays like a clock.</span></div>
+    <div class="lkey"><i style="--c:#E2452E"></i><span><b>Saveloy</b> up and down with the weather.</span></div>
+    <div class="lkey"><i style="--c:#8FA86A"></i><span><b>Nan's hallway, Pier roof</b> turns up whatever.</span></div>
+    <div class="lkey"><i style="--c:#F08A24"></i><span><b>Slow orange</b> ?</span></div>
+  </div>
+  <figcaption>Inside the front cover she had made a key, like on a map. Growth. Income. Cyclical. Defensive. She never used the words.</figcaption>
+</figure>
+
+<div class="col">
+  <p>Which is best? I say.</p>
+  <p>And all six of them laugh at me. Even Priti.</p>
+  <p>That's what everybody asks, says Mrs Pell, and it's the wrong question. Look at the page. What do you see?</p>
+  <p>I look. I'm good at this bit. It's the only thing I am good at.</p>
+  <p>It's not all one colour, I say.</p>
+  <p>It's not all one colour. Your mother used to hold the book out at arm's length, like you're doing now. If it's all red, she'd say, we're in trouble the day the weather turns. If it's all pink, we're gambling. If it's all green, we're safe and we'll get nowhere. She wanted a page that looked right. She said she couldn't tell you why. She said it's like a painting. You know when there's too much of something.</p>
+  <p>What's the orange? I say. It's the biggest thing on the page and nobody has said a word about it.</p>
+  <p>The orange is for when you're ready, says Bernadette. And not before.</p>
+
+  <h2>September 2011</h2>
+  <p>I turn back through the book while they argue about the biscuits. I'm not snooping. I just like the pages. Every year the bars get a little longer, like a child against a door frame. Except 2008, where they all shrink back together and somebody, Carol, has drawn a small skull.</p>
+  <p>I'm looking for the first of the twenties. They start in the autumn of 2011. A neat yellow tick every month. L.H., twenty pounds, out.</p>
+  <p>Above the first one there's another line. It isn't in pencil. It's in red biro, pressed hard.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger" role="img" aria-label="Two lines from the ledger. In red biro: September 2011, out, 1,900 pounds, N. Below it in pencil with a yellow tick: October 2011, out, 20 pounds, L.H.">
+    <div class="lline red"><span>Sept 2011</span><span>out</span><span>£1,900</span><span>N.</span></div>
+    <div class="lline"><span>Oct 2011</span><span>out</span><span>£20</span><span>L.H. <em>✓</em></span></div>
+    <div class="lline"><span>Nov 2011</span><span>out</span><span>£20</span><span>L.H. <em>✓</em></span></div>
+  </div>
+  <figcaption>The only time in twenty-seven years that anybody took a lump out of the book.</figcaption>
+</figure>
+
+<div class="col">
+  <p>What's this, I say.</p>
+  <p>The room goes quiet, the way a room does.</p>
+  <p>That was your deposit, says Mrs Pell. And your first term's rent. In Leeds.</p>
+  <p>No. I had a bursary. The Harbour Trust bursary, for a young person of promise from the town. Nineteen hundred pounds. I had a letter. I've still got the letter.</p>
+  <p>I typed the letter, says Auntie Carol. On the nail bar's paper, with the top cut off.</p>
+  <p>I look at her.</p>
+  <p>There's no Harbour Trust, love, she says. There's a harbour.</p>
+  <p>I have told that story at dinner parties. I have told it to Giles's mother. I got out of that town on my own merit and nobody helped me. I say it like grace before meals. It is the one thing about me I have never had to make up.</p>
+  <p>Linda and I didn't speak for fourteen years over that letter, says Carol. We sat at this table every Thursday and passed the sugar through Dot. I said you should know where it came from. She said you would never have gone if you'd known what it cost her. She said, let her think she flew.</p>
+  <p>My phone lights up on the table. It's Giles.</p>
+  <p class="msg">Sent flowers to the studio for your first class. Florist says unit 6 has been a ceramicist since March. Ring me x</p>
+  <p>He has put a kiss on it.</p>
+</div>
+
+<section class="test sms" data-test="types" data-answer="butter">
+  <p>I don't ring him. I get on the train. Somewhere after Seamer the phone goes again, and for one second I think it's him.</p>
+  <p class="txt">FOUR COLOURS FROM THE BOOK</p>
+  <p class="ask">Which one pays you every few months whether you look at it or not?</p>
+  <div class="opts">
+    <button style="--c:#F26FA6" data-opt="rock" data-say="KAYLEIGHS. NEVER PAID A PENNY. IT GOES UP AND DOWN AND MAKES HER SQUEAL. A GROWTH SHARE. DOT"><span>Rock</span></button>
+    <button style="--c:#E2452E" data-opt="saveloy" data-say="PAYS IN A GOOD YEAR. THEN ONE YEAR IT DOES NOT. CYCLICAL. ASK ME HOW I KNOW. CAROL"><span>Saveloy</span></button>
+    <button style="--c:#F08A24" data-opt="orange" data-say="WE HAVE NOT DONE THE ORANGE. PATIENCE. BERNADETTE"><span>Slow orange</span></button>
+    <button style="--c:#E9C95A" data-opt="butter" data-say="GOOD BUTTER. OLD AND STEADY. PAYS LIKE A CLOCK. AN INCOME SHARE. BISCUIT. NOW RING THAT YOUNG MAN."><span>Good butter</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Four biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+
 <div class="col">
   <div class="end">
-    <p class="note">End of part one.</p>
-    <button class="next" disabled>Part two is being written</button>
+    <p class="note">End of part two.</p>
+    <button class="next" disabled>Part three is being written</button>
+    <p class="note small">The companies, people and figures in this story are made up. It shows how investing works; it is not advice on what to buy.</p>
   </div>
 </div>
 </article>
