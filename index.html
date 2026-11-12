@@ -294,6 +294,40 @@ main{padding:0}
 /* seven colours in one bar */
 .lrow i.multi,.opts button.rainbow::before{background:linear-gradient(90deg,#2E73C8 0 22%,#2FA39A 22% 36%,#E9C95A 36% 50%,#E2452E 50% 58%,#8FA86A 58% 70%,#F26FA6 70% 76%,#F08A24 76%)}
 .lrow i{max-width:100%}
+
+/* the tin of everything */
+.tin{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;padding:.6rem;background:#2B2A5C;border-radius:50%/12%;break-inside:avoid;
+  box-shadow:inset 0 0 0 5px #C9A64B,0 12px 30px rgba(42,34,85,.25)}
+.tin i{aspect-ratio:1;border-radius:2px 1px 3px 1px}
+/* the ticket */
+.ticket{position:relative;background:#FBF3E4;border-radius:6px;padding:1rem 1.1rem;break-inside:avoid;transform:rotate(-1.2deg);
+  box-shadow:0 10px 26px rgba(42,34,85,.2);border-top:.55rem solid #E1772A;font-family:system-ui,-apple-system,sans-serif;color:#3A2E2A}
+.trow{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.trow b{font-size:1.35rem;letter-spacing:.04em}
+.trow.sm{margin-top:.7rem;font-size:.8rem;letter-spacing:.06em;color:#6E5E55}
+.tstamp{position:absolute;right:1rem;bottom:-.6rem;font-family:Caveat,cursive;font-size:1.5rem;color:#C0392B;transform:rotate(-8deg)}
+/* her letter */
+.bluepaper{background:#DCE8F7;color:#1F3A8A;font-family:Caveat,cursive;font-size:1.32rem;line-height:1.55rem;padding:1.1rem 1.2rem 1.3rem;break-inside:avoid;
+  background-image:repeating-linear-gradient(transparent 0 1.5rem,rgba(31,58,138,.18) 1.5rem calc(1.5rem + 1px));border-radius:2px;
+  box-shadow:0 12px 30px rgba(42,34,85,.22);transform:rotate(.5deg)}
+.bluepaper p{margin:0 0 .35rem}
+/* the writing check */
+.flow .wgate{break-before:column;break-after:column;break-inside:avoid}
+.wgate .who-to{color:var(--ink-soft);margin:0 0 .3rem}
+.wgate .ask{font-family:"Young Serif",Georgia,serif;font-size:1.45rem;line-height:1.2;margin:0 0 .5rem}
+.wgate .sub{font-size:.95rem;color:var(--ink-soft);margin:0 0 1rem}
+.wform{display:flex;gap:.6rem;align-items:stretch}
+.wform[hidden]{display:none}
+.wform input{font:inherit;font-size:1.4rem;width:7.5rem;padding:.45rem .7rem;border:2px solid var(--ink);border-radius:6px;background:var(--sheet);color:var(--ink)}
+.wform button{font:inherit;font-size:1rem;border:0;border-radius:6px;padding:.5rem 1rem;background:var(--ink);color:var(--paper);cursor:pointer}
+.wform input:focus-visible,.wform button:focus-visible{outline:3px solid var(--note);outline-offset:2px}
+.wgate .say{font-style:italic;min-height:2.4em;margin:.9rem 0 .6rem}
+.wbar{height:1.3rem;background:var(--paper-deep);border-radius:3px;overflow:hidden;filter:url(#rough)}
+.wbar i{display:block;height:100%;width:var(--w,0%);transition:width .6s;
+  background:repeating-linear-gradient(115deg,#EBA91A 0 2px,color-mix(in srgb,#EBA91A 62%,transparent) 2px 4px)}
+.wbar.full i{background:repeating-linear-gradient(115deg,#5DA24F 0 2px,color-mix(in srgb,#5DA24F 62%,transparent) 2px 4px)}
+.wlabel{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-soft);margin-top:.3rem;font-variant-numeric:tabular-nums}
+.wgate .won{margin-top:1rem}
 </style>
 </head>
 <body>
@@ -1301,9 +1335,316 @@ main{padding:0}
   <p>It is the first time in fifteen years I have spent her money on something that isn't paint.</p>
   <p>Single, I say.</p>
 
+</div>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Part four</p>
+  <h2>Rainy day</h2>
+</section>
+<div class="col">
+  <div class="memory">
+    <p>When I was nineteen my mother put me on the train.</p>
+    <p>It was the 7:10, the first one out. I had a holdall and a portfolio case and a letter from the Harbour Trust in my jeans pocket, folded so many times it had gone soft.</p>
+    <p>I'd told her the night before that I wasn't going. Sam had asked me to stay, and I'd said yes, and I was going to defer a year, and it would be fine. She hadn't said anything. She'd gone up to bed.</p>
+    <p>At six she was standing at the end of mine with her good coat on. The navy one. She never wore it in the shop.</p>
+    <p>Get dressed, she said.</p>
+    <p>On the platform she gave me an envelope with twenty pounds in it, the first one, and on the flap: for paints. She held my face in both her hands, which she had never done, and which she never did again.</p>
+    <p>Don't you dare stay for a boy, she said. Don't you dare. Don't be me.</p>
+    <p>I cried from Thornsea to Malton. I didn't text Sam. I didn't know how to say it, so I didn't, for eight years.</p>
+    <p>She was still on the platform when the train went round the bend. In the navy coat. Not waving. Just standing there, with her hand flat on her chest, like she was keeping something in.</p>
+  </div>
+</div>
+
+<section class="chap">
+  <p class="chapno">Chapter ten</p>
+  <h2>Slow orange</h2>
+</section>
+<div class="col">
+  <h2>The step</h2>
+  <p>I come back to Thornsea with everything I own in a taxi from Scarborough that I can't afford. Seven boxes. Six paintings in bubble wrap. A jar.</p>
+  <p>The key doesn't fit.</p>
+  <p>I try it four times, the way you do, as if the lock might change its mind. Then I see the new brass of it, still bright, and the screws, still shiny. Dad has changed the locks on the flat. On my mother's flat, where I slept under the horses.</p>
+  <p>The taxi driver helps me put the boxes on the step. He doesn't charge me for the waiting. He says, you all right, love? the way Dev does, and I nearly cry at a stranger in a Skoda.</p>
+  <p>Carol comes for me in her car with the nail bar's name on the side. She doesn't ask. She just starts loading boxes in the back, in her heels, swearing very quietly the whole time like somebody saying a rosary.</p>
+  <p>I sleep in the back room of Nailed It, on the pedicure chair, which reclines nearly flat if you hold the lever. The paintings are stacked against the wall in their bubble wrap. My mother with no face watches me all night through the plastic.</p>
+
+  <h2>Pell's</h2>
+  <p>Mrs Pell gives me a job.</p>
+  <p>She doesn't call it a job. She says the girl's left, which is true, and that she can't fold a fitted sheet any more because of her shoulder, which is not. Eight till two, six days. Cash, on a Friday.</p>
+  <p>On Friday she hands me an envelope. I say, thank you, Maureen, and I put it in my apron.</p>
+  <p>I go into the back and I sit on the dryer and I put my head on my knees.</p>
+  <p>I'm thirty-four. I have a degree. I have had work in a gallery in York. I am folding other people's pants for cash in an envelope in the town I left, and I have never in my life been so close to understanding my mother, and I would give anything for it to have been some other way.</p>
+  <p>Edie comes in on the Saturday with Sam and a bag of school uniform. She has never seen a launderette work. She watches the machines like television.</p>
+  <p>Are you the painting lady or the washing lady? she says.</p>
+  <p>Both, I say. At the moment.</p>
+  <p>She thinks about it. That's good, she says. Then you can do pictures while it goes round.</p>
+  <p>So I do. On the back of a service wash ticket, with a biro off the counter. Her, in the coat with ears, watching the drum. She takes it home. Sam doesn't say anything. He stands by the door with the uniform and looks at me like I've given him something, which I suppose I have.</p>
+
+  <h2>The tin</h2>
+  <p>On Thursday it's Bernadette's turn. She has been waiting, I realise, for weeks.</p>
+  <p>The orange, she says. You've been looking at it since your first night. You can't help it, can you? It's the biggest thing on the page.</p>
+  <p>It's nearly half the book.</p>
+  <p>It's more than half of mine. She sets something on the table. It's a tin of chocolates. The big Christmas kind, with the twisted wrappers, every colour.</p>
+  <p>Pick one, she says.</p>
+  <p>I pick the purple one. Everybody does.</p>
+  <p>Now. Say you had to put all your money into one sweet in this tin. Which one would you choose?</p>
+  <p>I look at the purple one in my hand. I think about Carol's housebuilder.</p>
+  <p>I wouldn't, I say.</p>
+  <p>No, says Bernadette. Neither would I. I nursed for forty-one years, I'm not stupid, but I don't know which firm is going to do best next year. Nobody does. Not the men on the telly, not the man at Carol's party, not Kayleigh's phone. So I don't pick. I buy the tin.</p>
+</div>
+
+<figure class="fig">
+  <div class="tin" role="img" aria-label="A box packed with about two hundred tiny squares of different colours, like a tin of sweets seen from above. Caption: Slow orange, one piece, and a crumb of thousands of firms inside it."><i style="background:#F26FA6"></i><i style="background:#E9C95A"></i><i style="background:#F08A24"></i><i style="background:#C0392B"></i><i style="background:#2E73C8"></i><i style="background:#2FA39A"></i><i style="background:#6FB7D6"></i><i style="background:#2FA39A"></i><i style="background:#F26FA6"></i><i style="background:#EBA91A"></i><i style="background:#2E73C8"></i><i style="background:#6FB7D6"></i><i style="background:#E2452E"></i><i style="background:#2E73C8"></i><i style="background:#2FA39A"></i><i style="background:#F08A24"></i><i style="background:#F08A24"></i><i style="background:#2FA39A"></i><i style="background:#E2452E"></i><i style="background:#2FA39A"></i><i style="background:#6FB7D6"></i><i style="background:#F08A24"></i><i style="background:#2E73C8"></i><i style="background:#EBA91A"></i><i style="background:#2FA39A"></i><i style="background:#E2452E"></i><i style="background:#C0392B"></i><i style="background:#C0392B"></i><i style="background:#EBA91A"></i><i style="background:#2E73C8"></i><i style="background:#EBA91A"></i><i style="background:#EBA91A"></i><i style="background:#F08A24"></i><i style="background:#2E73C8"></i><i style="background:#E2452E"></i><i style="background:#2E73C8"></i><i style="background:#6FB7D6"></i><i style="background:#E9C95A"></i><i style="background:#8FA86A"></i><i style="background:#F08A24"></i><i style="background:#E9C95A"></i><i style="background:#6FB7D6"></i><i style="background:#2FA39A"></i><i style="background:#EBA91A"></i><i style="background:#8FA86A"></i><i style="background:#6FB7D6"></i><i style="background:#C0392B"></i><i style="background:#E9C95A"></i><i style="background:#2FA39A"></i><i style="background:#EBA91A"></i><i style="background:#EBA91A"></i><i style="background:#C0392B"></i><i style="background:#E2452E"></i><i style="background:#F26FA6"></i><i style="background:#2FA39A"></i><i style="background:#6FB7D6"></i><i style="background:#3F7186"></i><i style="background:#2FA39A"></i><i style="background:#EBA91A"></i><i style="background:#2E73C8"></i><i style="background:#EBA91A"></i><i style="background:#E2452E"></i><i style="background:#8A5BB5"></i><i style="background:#C0392B"></i><i style="background:#6FB7D6"></i><i style="background:#F08A24"></i><i style="background:#F26FA6"></i><i style="background:#8A5BB5"></i><i style="background:#EBA91A"></i><i style="background:#8A5BB5"></i><i style="background:#F26FA6"></i><i style="background:#8FA86A"></i><i style="background:#E2452E"></i><i style="background:#E9C95A"></i><i style="background:#3F7186"></i><i style="background:#E2452E"></i><i style="background:#2FA39A"></i><i style="background:#EBA91A"></i><i style="background:#8FA86A"></i><i style="background:#6FB7D6"></i><i style="background:#8A5BB5"></i><i style="background:#F26FA6"></i><i style="background:#3F7186"></i><i style="background:#8A5BB5"></i><i style="background:#8FA86A"></i><i style="background:#EBA91A"></i><i style="background:#2FA39A"></i><i style="background:#2FA39A"></i><i style="background:#6FB7D6"></i><i style="background:#F08A24"></i><i style="background:#E9C95A"></i><i style="background:#F26FA6"></i><i style="background:#E9C95A"></i><i style="background:#8A5BB5"></i><i style="background:#F08A24"></i><i style="background:#2E73C8"></i><i style="background:#C0392B"></i><i style="background:#2FA39A"></i><i style="background:#6FB7D6"></i><i style="background:#EBA91A"></i><i style="background:#F26FA6"></i><i style="background:#F26FA6"></i><i style="background:#3F7186"></i><i style="background:#F26FA6"></i><i style="background:#EBA91A"></i><i style="background:#8A5BB5"></i><i style="background:#EBA91A"></i><i style="background:#8A5BB5"></i><i style="background:#2FA39A"></i><i style="background:#2FA39A"></i><i style="background:#8FA86A"></i><i style="background:#8A5BB5"></i><i style="background:#3F7186"></i><i style="background:#C0392B"></i><i style="background:#2FA39A"></i><i style="background:#2E73C8"></i><i style="background:#3F7186"></i><i style="background:#3F7186"></i><i style="background:#8FA86A"></i><i style="background:#C0392B"></i><i style="background:#EBA91A"></i><i style="background:#C0392B"></i><i style="background:#8A5BB5"></i><i style="background:#8FA86A"></i><i style="background:#3F7186"></i><i style="background:#F08A24"></i><i style="background:#C0392B"></i><i style="background:#F26FA6"></i><i style="background:#2E73C8"></i><i style="background:#8A5BB5"></i><i style="background:#F26FA6"></i><i style="background:#E9C95A"></i><i style="background:#EBA91A"></i><i style="background:#2FA39A"></i><i style="background:#8A5BB5"></i><i style="background:#2E73C8"></i><i style="background:#E2452E"></i><i style="background:#8FA86A"></i><i style="background:#E9C95A"></i><i style="background:#3F7186"></i><i style="background:#E2452E"></i><i style="background:#F08A24"></i><i style="background:#F08A24"></i><i style="background:#8A5BB5"></i><i style="background:#2FA39A"></i><i style="background:#E9C95A"></i><i style="background:#8A5BB5"></i><i style="background:#F08A24"></i><i style="background:#6FB7D6"></i><i style="background:#8FA86A"></i><i style="background:#E9C95A"></i><i style="background:#F08A24"></i><i style="background:#6FB7D6"></i><i style="background:#8FA86A"></i><i style="background:#3F7186"></i><i style="background:#F08A24"></i><i style="background:#F26FA6"></i><i style="background:#C0392B"></i><i style="background:#F08A24"></i><i style="background:#E2452E"></i><i style="background:#E9C95A"></i><i style="background:#2FA39A"></i><i style="background:#E9C95A"></i><i style="background:#E9C95A"></i><i style="background:#E2452E"></i><i style="background:#C0392B"></i><i style="background:#E2452E"></i><i style="background:#2E73C8"></i><i style="background:#8A5BB5"></i><i style="background:#EBA91A"></i><i style="background:#E9C95A"></i><i style="background:#8FA86A"></i><i style="background:#8FA86A"></i><i style="background:#2E73C8"></i><i style="background:#E9C95A"></i><i style="background:#F08A24"></i><i style="background:#6FB7D6"></i><i style="background:#F26FA6"></i><i style="background:#EBA91A"></i><i style="background:#EBA91A"></i><i style="background:#F26FA6"></i><i style="background:#E9C95A"></i><i style="background:#3F7186"></i><i style="background:#6FB7D6"></i><i style="background:#EBA91A"></i><i style="background:#C0392B"></i><i style="background:#C0392B"></i><i style="background:#3F7186"></i><i style="background:#2E73C8"></i><i style="background:#8A5BB5"></i><i style="background:#C0392B"></i><i style="background:#6FB7D6"></i><i style="background:#F08A24"></i><i style="background:#F08A24"></i><i style="background:#F08A24"></i><i style="background:#F08A24"></i><i style="background:#2FA39A"></i><i style="background:#8A5BB5"></i><i style="background:#C0392B"></i><i style="background:#F08A24"></i><i style="background:#2E73C8"></i><i style="background:#E2452E"></i><i style="background:#2FA39A"></i><i style="background:#E2452E"></i><i style="background:#8A5BB5"></i><i style="background:#E9C95A"></i><i style="background:#2FA39A"></i><i style="background:#F26FA6"></i><i style="background:#EBA91A"></i><i style="background:#2E73C8"></i><i style="background:#2FA39A"></i><i style="background:#2E73C8"></i><i style="background:#EBA91A"></i><i style="background:#E9C95A"></i><i style="background:#6FB7D6"></i><i style="background:#2FA39A"></i></div>
+  <figcaption>Slow orange. One piece, bought like any other share. Inside it, a crumb of thousands of firms, in dozens of countries. She chose the colour of the street through the steamed-up window: everything at once.</figcaption>
+</figure>
+
+<div class="col">
+  <p>It's a fund, she says. Hundreds of people put their money in together, and the fund buys a little of everything on a list. The list is called an index. There's one for the hundred biggest firms in Britain. There's one for thousands of the biggest round the world. Ours is the world one. When you own a piece of the orange you own a crumb of all of them at once. The supermarket, the water, Kayleigh's app, firms in Japan I can't pronounce.</p>
+  <p>And who chooses what's in it?</p>
+  <p>Nobody. That's the beauty. It just buys whatever's on the list, in the size it is. If a firm gets bigger, the fund holds more of it. If it shrinks, less. If it goes bust, it falls off the list and something else comes on. Nobody's paid to be clever. That's why it's cheap.</p>
+  <p>Cheap how?</p>
+  <p>The orange costs us about a fifth of one per cent a year to own. Priti'll tell you next week why that matters. She's been waiting longer than me.</p>
+  <p>I have, says Priti.</p>
+  <p>The orange is what they call an ETF, says Bernadette. Don't let the letters put you off. It only means a fund like this that you can buy and sell on the stock market like a single share. One piece, one price, all day long.</p>
+  <p>So it can't go down, I say.</p>
+  <p>Everyone in the room says, oh, it can.</p>
+  <p>It went down with everything else in 2008, says Bernadette. It went down last month, when you were here. When the whole world has a bad week, so does the tin. What it doesn't do is go to nothing because one firm did something stupid. It's not a shield, Nell. It's a spread. Your mother called it spreading it thin, like butter on a long table.</p>
+  <p>Why's she got so much of it?</p>
+  <p>Because after 2008 she sat with this book every night for a month, says Mrs Pell, and she came in the January and said, I don't want to be clever any more. I want to be there. She moved a bit more into the orange every year after that. She called it slow because it is. It's the most boring thing in the book.</p>
+  <p>It's the biggest bar, says Kayleigh, who is holding the purple one now.</p>
+  <p>Funny, that, says Dot.</p>
+</div>
+
+<section class="test sms" data-test="fund" data-answer="thousands">
+  <p>Bernadette sends it before I'm down the stairs. She types in full sentences, with commas.</p>
+  <p class="txt">You buy one piece of the orange.</p>
+  <p class="ask">What do you actually own?</p>
+  <div class="opts">
+    <button style="--c:#2E73C8" data-opt="one" data-say="That would be one sweet, Nell. The orange is the tin. B."><span>A piece of one big firm</span></button>
+    <button style="--c:#F08A24" data-opt="thousands" data-say="A crumb of thousands of firms at once, through one fund that follows a list. That's an index fund, and the orange is the kind you buy like a share. Biscuit. B."><span>A crumb of thousands of firms</span></button>
+    <button style="--c:#E9C95A" data-opt="gold" data-say="No gold, I'm afraid. Dot asked the same. B."><span>Gold, kept in a vault</span></button>
+    <button style="--c:#C9BEDC" data-opt="safe" data-say="Nothing is guaranteed. It went down in 2008 like everything else. It's a spread, not a shield. B."><span>A promise it won't go down</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Eight biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter eleven</p>
+  <h2>Two per cent</h2>
+</section>
+<div class="col">
+  <h2>Priti's father</h2>
+  <p>Priti doesn't do a speech. She turns the laptop round and tells us about her father.</p>
+  <p>He had the chemist before me, she says. Forty years. And for thirty of them he paid a man in Bradford to look after his savings. A nice man. Good suit, Christmas card every year. He charged two per cent a year for his advice, and the funds he picked charged another one per cent on top.</p>
+  <p>Three per cent doesn't sound like much, I say.</p>
+  <p>No, says Priti. That's the trick of it. It doesn't sound like anything. It's the cost of a sandwich on a hundred pounds. But it isn't charged once. It's charged every year, on everything, including on everything the money's already made. Year after year after year. It's the same sum that makes money grow, running backwards.</p>
+  <p>When my father retired I sat down with his statements and worked out what the man in Bradford had cost him. Not what he'd charged. What he'd cost. The money that would have been there if it hadn't been taken out, and the money that money would have made, and so on, for thirty years.</p>
+  <p>How much?</p>
+  <p>She tells me. It's more than the price of the house she grew up in.</p>
+  <p>I showed my dad, she says. He cried. He'd never once asked how much, because asking would have been rude. The man in Bradford sent flowers to the funeral.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger wide" role="img" aria-label="A ledger page: the same 10,000 pounds left for 30 years, growing about 7 per cent a year before charges. Costs 0.2 per cent a year: about 72,000 pounds, a long orange bar. Costs 2 per cent a year: about 43,000 pounds, a shorter grey bar. Note: the difference is the man in Bradford.">
+    <div class="lhead">£10,000 left for 30 years.</div>
+    <div class="lrow"><span>costs 0.2% a year ≈ £72,000</span><i style="--w:100%;--c:#F08A24"></i></div>
+    <div class="lrow"><span>costs 2% a year ≈ £43,000</span><i style="--w:60%;--c:#9A93B4"></i></div>
+    <div class="lnote">the gap is the man in Bradford. P.</div>
+  </div>
+  <figcaption>Priti's page. Same money, same thirty years, the same 7% a year before charges, which is only her example and not a promise. The only thing different is the fee.</figcaption>
+</figure>
+
+<div class="col">
+  <p>The club had a man too, says Mrs Pell. From the building society, when we started. Your mother sacked him.</p>
+  <p>At the Christmas do, says Carol. In front of his wife.</p>
+  <p>She'd been doing his sums at night, says Mrs Pell. She came in with a page of them. She said, Maureen, he's the only thing in this book that goes up every single year, whatever happens. We moved the lot into the orange the January after.</p>
+  <p>So you check what it costs, I say. Before anything.</p>
+  <p>You check what it costs every year, says Priti. It's written on every fund, if you look. It's usually called the ongoing charge. If somebody won't tell you plainly what you're paying them, that's your answer.</p>
+
+  <h2>The snowball</h2>
+  <p>Then Priti does the other half. The good half.</p>
+  <p>Kayleigh, she says. How old are you?</p>
+  <p>Twenty-three.</p>
+  <p>And you put in twenty pounds a month. Nell's thirty-four. Say she started tomorrow, twenty a month, same as you. And say you both leave it till you're sixty-five, and it does what the book's done on average. Who has more?</p>
+  <p>Kayleigh, I say. She's put more in.</p>
+  <p>She's put in about a third more, says Priti. She'll end up with more than double.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger wide" role="img" aria-label="Two bars for 20 pounds a month until age 65, growing about 7 per cent a year. Kayleigh, starting at 23: paid in about 10,000 pounds, ends with about 61,000. Nell, starting at 34: paid in about 7,400 pounds, ends with about 26,000.">
+    <div class="lhead">£20 a month, until 65.</div>
+    <div class="lrow"><span>Kayleigh, from 23 ≈ £61,000</span><i style="--w:100%;--c:#F26FA6"></i></div>
+    <div class="lrow"><span>paid in ≈ £10,100</span><i style="--w:17%;--c:#F9C3D9"></i></div>
+    <div class="lrow"><span>Nell, from 34 ≈ £26,000</span><i style="--w:43%;--c:#2E73C8"></i></div>
+    <div class="lrow"><span>paid in ≈ £7,400</span><i style="--w:12%;--c:#A9C4EC"></i></div>
+    <div class="lnote">eleven years. that's all. P.</div>
+  </div>
+  <figcaption>The pale bars are what each of them put in. The rest is the money making money, and that money making money, for longer.</figcaption>
+</figure>
+
+<div class="col">
+  <p>That's compound, says Priti. Your gains make gains, and those make gains. Early on it looks like nothing. Then it doesn't. It's why Dot is richer than all of us and has never had a job she'd describe as a job.</p>
+  <p>I've had Ron, says Dot.</p>
+  <p>The fee is the same snowball, says Priti, rolling the other way. That's all I wanted to say. Time is the best thing in the book. A big fee is the worst. Both of them are slow and both of them are invisible and in thirty years they're the whole story.</p>
+  <p>Kayleigh has gone very quiet. She's looking at her pink bar, the app that's down forty per cent.</p>
+  <p>What does mine cost? she says.</p>
+  <p>Priti tells her. Kayleigh says a word I won't write down.</p>
+
+  <h2>Carol's back room</h2>
+  <p>Sam drives me back to Carol's. He's not meant to. I'm not meant to let him. We sit in the van outside the nail bar with the engine off, in the dark, with Carol's neon making us both pink.</p>
+  <p>Come in, I say.</p>
+  <p>I've just left a man who irons. I'm sleeping on a pedicure chair. It's the worst idea I have ever had and I've had some. I know exactly what my mother would say. She'd say it with her mouth, not her words.</p>
+  <p>He comes in.</p>
+  <p>Afterwards we lie on the floor of the back room on his coat, between my boxes, with the paintings stacked round us in their bubble wrap like a very small gallery. He traces the line on my shoulder where the strap goes, very slowly, as if he's checking it's still where he left it.</p>
+  <p>There's a flat over the harbour office, he says, into my hair. It's going. Two rooms, a view of the boats. Edie could have the little one when she's with me. You could paint in the other. You wouldn't have to pay me anything, not for a bit.</p>
+  <p>And there it is. The kindest thing. The roof, handed over, with no letter.</p>
+  <p>No, I say.</p>
+  <p>He goes still.</p>
+  <p>I've just got out of one man's flat, Sam. I'm not moving into another man's nearly-flat. Not even yours. Especially not yours.</p>
+  <p>It's not like that.</p>
+  <p>It's always like that. That's what I've worked out up those stairs. It's not about whether you're kind. Giles is kind. You're kind. Dad paid for the coffin. It's about whose name is on the door.</p>
+  <p>He gets dressed in the dark. At the door he stops, with his back to me. Always his back.</p>
+  <p>She said you'd say that, he says. Your mum. Word for word.</p>
+</div>
+
+<section class="test sms" data-test="fees" data-answer="lots">
+  <p>Priti, at ten to one in the morning. I don't think Priti sleeps either.</p>
+  <p class="txt">SAME £10,000. SAME 30 YEARS. ONE FUND COSTS 0.2% A YEAR, ONE COSTS 2%.</p>
+  <p class="ask">Roughly what does the dearer one cost you?</p>
+  <div class="opts">
+    <button style="--c:#C9BEDC" data-opt="180" data-say="THAT'S ONE YEAR'S DIFFERENCE. IT'S CHARGED EVERY YEAR, ON EVERYTHING. P"><span>About £180</span></button>
+    <button style="--c:#9A93B4" data-opt="1800" data-say="THAT'S TEN YEARS OF THE FEE ON THE STARTING MONEY. YOU'VE FORGOTTEN WHAT IT WOULD HAVE MADE. P"><span>About £1,800</span></button>
+    <button style="--c:#F08A24" data-opt="lots" data-say="ABOUT £29,000, IN MY EXAMPLE. NEARLY THREE TIMES WHAT YOU PUT IN. SMALL FEES GROW LIKE SMALL GAINS DO. ALWAYS CHECK THE ONGOING CHARGE. BISCUIT. P"><span>About £29,000</span></button>
+    <button style="--c:#8FA86A" data-opt="none" data-say="THE MAN IN BRADFORD SAID THAT TOO. P"><span>Nothing, it's worth it</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Nine biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter twelve</p>
+  <h2>Tuesday</h2>
+</section>
+<div class="col">
+  <h2>The rule nobody wrote down</h2>
+  <p>The next Thursday I ask the question I've been carrying round the launderette all week, in among the sheets.</p>
+  <p>Why didn't she just go? I say. She had eleven thousand pounds. She could have gone any time. Why did she stay in that shop with an apron and twenty pounds?</p>
+  <p>Nobody answers for a while. Dot is awake for once.</p>
+  <p>Because she had nothing else, says Mrs Pell. That was the trouble. Your mother broke the one rule we never thought to write down, because it's so obvious none of us ever thought a person could break it.</p>
+  <p>Before you put a penny in this book, you keep some back. Three months of what you need, at the very least. In an ordinary savings account, where you can get it on a Tuesday morning without asking anybody. That's your rainy day. That's your running-away money. The book is for after. For the long haul. It's not for the day you need it, because the day you need it might be the week it's down by a third.</p>
+  <p>Every one of us had a post office book first, says Bernadette. Linda never did. Keith saw to that. Every penny that came into that house went through his till. So the book was the only money she had. Her savings, her pension, her rainy day and her running-away money, all in one place, and that place went up and down.</p>
+  <p>Shares are for money you can leave, says Priti. She never had any money she could leave. She only had money she couldn't spend.</p>
+  <p>I think about the suitcase on top of the wardrobe. Three tops and a birth certificate. No money. That was the whole problem.</p>
+</div>
+
+<section class="test sms" data-test="rainy" data-answer="savings">
+  <p>Mrs Pell puts her hand on my arm, there at the table, and texts me with the other one. I watch her do it. It takes her a full minute.</p>
+  <p class="txt">YOU NEED MONEY ON A TUESDAY AND THE BOOK IS DOWN A THIRD.</p>
+  <p class="ask">What should you have had first?</p>
+  <div class="opts">
+    <button style="--c:#E2452E" data-opt="more" data-say="THEN YOU WOULD HAVE MORE TO SELL AT THE BOTTOM. M.P."><span>More in the book</span></button>
+    <button style="--c:#9DB7E8" data-opt="savings" data-say="A RAINY DAY POT. THREE MONTHS OF WHAT YOU NEED AT LEAST, IN SAVINGS YOU CAN GET AT ANY DAY. THEN THE BOOK. BISCUIT. M.P."><span>Savings you can get at any day</span></button>
+    <button style="--c:#F26FA6" data-opt="tip" data-say="ASK CAROL HOW THAT WENT. M.P."><span>A hot tip</span></button>
+    <button style="--c:#7A4A2E" data-opt="husband" data-say="NO. M.P."><span>A husband with a till</span></button>
+  </div>
+  <p class="say" aria-live="polite"></p>
+  <div class="won" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#E3B66B" stroke="#B9853C" stroke-width="3" stroke-dasharray="5 4"/><g fill="#B9853C"><circle cx="22" cy="24" r="2.4"/><circle cx="32" cy="20" r="2.4"/><circle cx="42" cy="24" r="2.4"/><circle cx="20" cy="36" r="2.4"/><circle cx="32" cy="32" r="2.4"/><circle cx="44" cy="36" r="2.4"/><circle cx="26" cy="45" r="2.4"/><circle cx="38" cy="45" r="2.4"/></g></svg>
+    <p>Ten biscuits in the tin. Turn the page.</p>
+  </div>
+</section>
+
+<div class="col">
+  <h2>Nine o'clock</h2>
+  <p>Sam is outside when I come down. Not in the van. Standing at the bottom of Pell's stairs in the cold with his hands in his pockets, like a boy at a school gate.</p>
+  <p>I'm going to break a promise, he says. I've been going to for a fortnight. I'd rather you hated me for this than for the other.</p>
+  <p>We walk up to the top road. He doesn't drive. He wants it to take the time it takes.</p>
+  <p>At the bus shelter he stops.</p>
+  <p>I was meant to pick her up here, he says. That Tuesday. Nine o'clock. To run her down to the station for the 9:40, so nobody'd see her walk through town with a case. She'd her ticket. She'd shown me it the Thursday before, in the van. She was that proud of it, Nell. She kept taking it out of her purse to look at it.</p>
+  <p>A ticket to where?</p>
+  <p>He tells me.</p>
+  <p>I waited till twenty past ten. I thought she'd changed her mind. I thought, he's found out, she's lost her nerve, she'll ring. I drove to Whitby. I was in Whitby when Keith rang round to say.</p>
+  <p>He doesn't touch me. He knows better.</p>
+  <p>She made me promise, he says. She said if it went wrong, you weren't to know she'd tried. She said you'd carry it. She said you carry everything, you always have, you just put it somewhere you can't see it.</p>
+
+  <h2>The back door</h2>
+  <p>The shop is shut. Thursday is Dad's night at the club.</p>
+  <p>The new lock is only on the flat door. Nobody thought to change the back. Nobody ever does, in our family. We lock the front and we leave the back open and we call that keeping ourselves to ourselves.</p>
+  <p>Her coat is on the hook by the back door, where it always hung. The navy one. He has hung it back up, as if she might want it.</p>
+</div>
+
+<figure class="fig">
+  <img class="painting" src="art/back-door.jpg" onerror="this.closest('figure').hidden=true" width="1360" height="768" alt="An impressionist painting of a navy coat on a hook on a back door, with a small brown suitcase with its straps done up on the floor below, and the edge of an empty chair." draggable="false">
+  <figcaption><b>The back door.</b> Oil on board. I painted it the week after, from memory, in Carol's back room. It's the only painting of my mother I have ever finished, and she isn't in it.</figcaption>
+</figure>
+
+<div class="col">
+  <p>In the right-hand pocket there is a train ticket.</p>
+</div>
+
+<figure class="fig">
+  <div class="ticket" role="img" aria-label="An orange and cream train ticket. Thornsea to Leeds. Single. Adult. Tuesday the 28th, 09:40. Not used.">
+    <div class="trow"><b>THORNSEA</b><span>to</span><b>LEEDS</b></div>
+    <div class="trow sm"><span>SINGLE</span><span>ADULT</span><span>TUE 28TH</span><span>09:40</span></div>
+    <div class="tstamp">not used</div>
+  </div>
+  <figcaption>The day she died. She'd booked it on a phone, which she didn't own. Kayleigh, it turns out. On her lunch break, in the back of the hairdresser's, sworn to secrecy.</figcaption>
+</figure>
+
+<div class="col">
+  <p>The suitcase is on top of her wardrobe. The brown one from Majorca. I have to stand on her chair.</p>
+  <p>It's empty, with the straps undone. Exactly as it was when I was fifteen. For a second I think I've got it wrong, that Sam's got it wrong, that she never—</p>
+  <p>Then I feel it. In the lining pocket, the elastic one, where she used to keep the passports. One sheet of blue writing paper, folded in four.</p>
+  <p>My mother did not write things down. She bought the cards with the verse already in.</p>
+</div>
+
+<figure class="fig">
+  <div class="bluepaper" role="img" aria-label="A handwritten letter on blue lined writing paper, transcribed in the next page's text.">
+    <p>Nell,</p>
+    <p>I'm coming on the 9.40. Don't worry, I'm not coming to stop with you, I've a room at a B&amp;B on Hyde Park Road for the week while I sort myself out.</p>
+    <p>I'm taking my share out of the book. Maureen says I'm daft to do it in a bad month. I've waited twenty six years for a good one.</p>
+    <p>Your dad asked me once, where would I go. You were fifteen. You thought I didn't know you'd heard.</p>
+    <p>I know now.</p>
+    <p>I'll ring you when I'm settled. You don't have to tell me anything you don't want to. I just want to live in the same town as you for a bit, with my own money in my own purse.</p>
+    <p>Bring your paints.</p>
+    <p>Mum</p>
+  </div>
+  <figcaption>She has crossed nothing out. She must have written it out in rough first, somewhere, and copied it. I never found the rough.</figcaption>
+</figure>
+
+<div class="col">
+  <p>I don't hear him on the stairs. He's always been quiet on stairs. It's the only quiet thing about him.</p>
+  <p>Dad stands in the bedroom doorway in his coat from the club, and he looks at me on her chair, and at the suitcase, and at the paper in my hand.</p>
+  <p>I don't say anything. For once in my life I make somebody else go first.</p>
+  <p>I found her at eight, he says. In the chair by the back door. Coat on. That case at her feet with the straps done. Her purse in her lap.</p>
+  <p>He doesn't come into the room.</p>
+  <p>I unpacked it. Before I rang the doctor. I put her things back in her drawers and I put that case back up there and I hung her coat on the hook. Then I rang.</p>
+  <p>Why.</p>
+  <p>Thirty-five years, he says, and she dies on her way out of my door. I wasn't having that said. Not in this town. Not at the Anchor. Not in Pell's.</p>
+  <p>So you said she had nothing.</p>
+  <p>She had nothing of mine.</p>
+  <p>He says it the way he said, your mother's passed. The way he says, we're out of haddock. And I understand, standing on her chair, that it isn't coldness. It's the only voice he has. He's been talking to her like that for thirty-five years and she had to listen for the rest of it underneath, the way you listen for the sea under the traffic.</p>
+  <p>I get down off the chair. I fold the letter into four, along her creases. I put it in my bra, where she kept the housekeeping.</p>
+  <p>Where would she have gone, he says. He isn't asking me. He's asking the doorframe. Where would she have gone, at her age, on her own, with nothing.</p>
+  <p>Leeds, Dad, I say.</p>
+  <p>She was coming to me.</p>
+
   <div class="end">
-    <p class="note">End of part three.</p>
-    <button class="next" disabled>Part four is being written</button>
+    <p class="note">End of part four.</p>
+    <button class="next" disabled>Part five is being written</button>
     <p class="note small">The companies, people and figures in this story are made up. It shows how investing works; it is not advice on what to buy.</p>
   </div>
 </div>
@@ -1412,13 +1753,14 @@ function layout(){
   step = book.clientWidth; page = 0; flow.style.transform = 'translateX(0px)';
   pages = Math.max(1, Math.round((flow.scrollWidth + 2 * pad) / step));
   if (anchor) page = Math.min(pages - 1, pageOf(anchor.el));
+  if (typeof maxPage === 'function') page = Math.min(page, maxPage());
   show();
 }
 function turn(dir, auto){
   const to = page + dir;
   if (busy || to < 0 || to >= pages) return;
   if (dir > 0 && to > maxPage()){
-    const t = tests.find(t => pageOf(t) === page);
+    const t = [...tests, ...Object.values(gates)].find(t => pageOf(t) === page);
     if (t){ t.classList.remove('shake'); void t.offsetWidth; t.classList.add('shake'); t.querySelector('.say').textContent = t.querySelector('.say').textContent || 'Mrs Pell is waiting.'; }
     return;
   }
@@ -1441,7 +1783,7 @@ function turn(dir, auto){
   }
 }
 stage.addEventListener('click', e => {
-  if (e.target.closest('button, a')) return;
+  if (e.target.closest('button, a, input, form, label')) return;
   turn(e.clientX < innerWidth * .3 ? -1 : 1);
 });
 let x0 = null;
@@ -1452,6 +1794,7 @@ stage.addEventListener('touchend', e => {
   if (Math.abs(dx) > 45){ e.preventDefault(); turn(dx < 0 ? 1 : -1); }
 });
 addEventListener('keydown', e => {
+  if (e.target.matches && e.target.matches('input, textarea')) return;
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); turn(1); }
   if (e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); turn(-1); }
 });
@@ -1532,9 +1875,85 @@ listen.addEventListener('click', e => {
 const tests = [...flow.querySelectorAll('.test')];
 let passed = {};
 try { passed = JSON.parse(localStorage.getItem('own.tests') || '{}'); } catch (e) {}
+// Her own book: at least 200 words a day before the next chapter opens. Asked after each chapter's question.
+const GOAL = 200;
+const today = () => new Date().toLocaleDateString('en-CA');
+let words = {}, wrote = {};
+try { words = JSON.parse(localStorage.getItem('own.words') || '{}'); wrote = JSON.parse(localStorage.getItem('own.wrote') || '{}'); } catch (e) {}
+try { // chapters she had already unlocked before this was added stay unlocked
+  if (!localStorage.getItem('own.wordsOn')){ Object.keys(passed).forEach(k => wrote[k] = true); localStorage.setItem('own.wordsOn', '1'); }
+} catch (e) {}
+const saveWords = () => { try { localStorage.setItem('own.words', JSON.stringify(words)); localStorage.setItem('own.wrote', JSON.stringify(wrote)); } catch (e) {} };
+function streak(){
+  let n = 0; const d = new Date();
+  if ((words[today()] || 0) < GOAL) d.setDate(d.getDate() - 1);
+  while ((words[d.toLocaleDateString('en-CA')] || 0) >= GOAL){ n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+const pick = (list, n) => list[Math.abs(n) % list.length];
+const cheers = [
+  n => `${n}. That's more than Keith has said since 1991. Turn the page, love. Carol`,
+  n => `${n} words. Very nice. Put the kettle on and carry on. Dot`,
+  n => `${n}, written down. Your mother would have been made up. M.P.`,
+  n => `${n}. That's a proper day's work. Biscuit. Bernadette`,
+  n => `${n} words. I've checked them twice. Priti`
+];
+const nudges = [
+  (n, r) => `${n}'s a start, pet. Go and write ${r} more and come back. We'll keep your chair warm. M.P.`,
+  (n, r) => `Only ${n}? I've written more than that on a raffle ticket. ${r} more, love, then come back up. Carol`,
+  (n, r) => `${r} to go. The kettle takes about that long. Dot`,
+  (n, r) => `${n} today. ${r} more and the door's open. No rush. Bernadette`
+];
+const gates = {};
+tests.forEach(t => {
+  const id = t.dataset.test;
+  if (passed[id] && wrote[id]) return;
+  const g = document.createElement('section');
+  g.className = 'wgate'; g.dataset.for = id;
+  g.innerHTML = `
+    <p class="who-to">Mrs Pell leans across the table. Not to me. To you.</p>
+    <p class="ask">And how many words of your own book have you written today?</p>
+    <p class="sub">Your own story, not this one. The club's rule is two hundred a day before the next chapter.</p>
+    <form class="wform"><input type="number" inputmode="numeric" min="0" max="50000" id="words-${id}" aria-label="Words written today" placeholder="0"><button type="submit">Tell the club</button></form>
+    <p class="say" aria-live="polite"></p>
+    <div class="wbar"><i></i></div><div class="wlabel"><span class="wn">0 today</span><span>${GOAL}</span></div>
+    <div class="won" hidden><p class="streak"></p></div>`;
+  t.after(g); gates[id] = g;
+  g.querySelector('form').addEventListener('submit', e => {
+    e.preventDefault(); e.stopPropagation();
+    const n = Math.max(0, Math.min(50000, parseInt(g.querySelector('input').value, 10) || 0));
+    words[today()] = n;
+    if (n >= GOAL) wrote[id] = true;
+    saveWords();
+    g.querySelector('.say').textContent = n >= GOAL ? pick(cheers, n)(n) : n === 0
+      ? 'Nothing yet? That\u2019s all right. Go and put one sentence down. Then another. Come back at two hundred. Bernadette'
+      : pick(nudges, n)(n, GOAL - n);
+    drawGate(id, true);
+  });
+});
+function drawGate(id, spoken){
+  const g = gates[id]; if (!g) return;
+  const n = words[today()] || 0;
+  if (passed[id] && !wrote[id] && n >= GOAL){ wrote[id] = true; saveWords(); }
+  g.querySelector('.wbar i').style.setProperty('--w', Math.min(100, n / GOAL * 100) + '%');
+  g.querySelector('.wbar').classList.toggle('full', n >= GOAL);
+  g.querySelector('.wn').textContent = `${n} today`;
+  const done = !!wrote[id];
+  g.querySelector('.won').hidden = !done;
+  if (done){
+    const s = streak();
+    g.querySelector('.streak').textContent = (s > 1 ? `${s} days in a row. ` : '') + 'Turn the page.';
+    if (!spoken && !g.querySelector('.say').textContent) g.querySelector('.say').textContent = `${n} words today already. The club has noticed. M.P.`;
+    g.querySelector('form').hidden = true;
+  }
+}
 function maxPage(){
-  const t = tests.find(t => !passed[t.dataset.test]);
-  return t ? pageOf(t) : pages - 1;
+  for (const t of tests){
+    const id = t.dataset.test;
+    if (!passed[id]) return pageOf(t);
+    if (gates[id] && !wrote[id]) return pageOf(gates[id]);
+  }
+  return pages - 1;
 }
 tests.forEach(t => {
   const say = t.querySelector('.say'), won = t.querySelector('.won'), opts = [...t.querySelectorAll('.opts button')];
@@ -1551,13 +1970,15 @@ tests.forEach(t => {
     if (b === right){
       passed[t.dataset.test] = true;
       try { localStorage.setItem('own.tests', JSON.stringify(passed)); } catch (e) {}
-      finish();
+      finish(); drawGate(t.dataset.test);
     } else {
       b.classList.add('no'); b.disabled = true;
       if (++wrong >= 2) t.classList.add('hint');
     }
   }));
 });
+
+Object.keys(gates).forEach(id => drawGate(id));
 
 // ---- chapters menu ----
 const toc = document.getElementById('toc'), menu = document.getElementById('menu');
@@ -1571,7 +1992,7 @@ function openMenu(){
     const b = document.createElement('button');
     b.innerHTML = `<small>${c.no}</small><b>${c.title}</b>`;
     if (c === here) b.setAttribute('aria-current', 'true');
-    if (pageOf(c.el) > maxPage()){ b.disabled = true; b.querySelector('small').textContent += ' (answer Mrs Pell first)'; }
+    if (pageOf(c.el) > maxPage()){ b.disabled = true; b.querySelector('small').textContent += ' (the club is waiting)'; }
     b.addEventListener('click', e => {
       e.stopPropagation(); closeMenu(); closeCard();
       page = pageOf(c.el); show(); seekToPage();
