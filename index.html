@@ -195,6 +195,29 @@ main{padding:0}
 #listen[aria-pressed=true] .i-pause{display:block}
 #listen:focus-visible{outline:3px solid var(--note);outline-offset:3px}
 .reading{background:color-mix(in srgb,var(--giles) 45%,transparent);box-shadow:0 0 0 .35rem color-mix(in srgb,var(--giles) 45%,transparent);border-radius:2px}
+
+/* chapter openers */
+.flow .chap{break-before:column;break-after:column;height:100%;display:grid;align-content:center}
+.chapno{color:var(--ink-soft);margin:0}
+.flow .chap h2{font-size:clamp(2.4rem,10vw,3.8rem);margin:.4rem 0 0}
+/* the envelope flap */
+.flap{position:relative;background:#EFE3C8;color:#B9A37A;border-radius:2px;aspect-ratio:400/210;break-inside:avoid;
+  box-shadow:0 10px 26px rgba(42,34,85,.18);font-family:Caveat,cursive;transform:rotate(.8deg)}
+.flap svg{position:absolute;inset:0;width:100%;height:100%}
+.flap span{position:absolute;left:0;right:0;text-align:center;color:#2B4FB3}
+.flap .l1{top:6%;font-size:clamp(2rem,9vw,3rem);transform:rotate(-2deg)}
+.flap .l2{top:33%;font-size:clamp(1.2rem,5.2vw,1.7rem);transform:rotate(-1deg)}
+/* her mother's ledger */
+.ledger{background:var(--sheet);padding:1.1rem 1.1rem 1rem;border-radius:2px;break-inside:avoid;box-shadow:0 12px 30px rgba(42,34,85,.2);
+  background-image:repeating-linear-gradient(transparent 0 1.9rem,rgba(46,115,200,.14) 1.9rem calc(1.9rem + 1px))}
+.lrow{display:grid;grid-template-columns:7.2rem 1fr;align-items:center;gap:.6rem;height:1.9rem}
+.lrow span,.ltotal span{font-family:Caveat,cursive;font-size:1.25rem;color:#2B4FB3;white-space:nowrap}
+.lrow i{height:1.05rem;width:var(--w);border-radius:2px;filter:url(#rough);
+  background:repeating-linear-gradient(115deg,var(--c) 0 2px,color-mix(in srgb,var(--c) 62%,transparent) 2px 4px)}
+.ltotal{display:flex;justify-content:space-between;align-items:baseline;margin-top:.9rem;padding-top:.5rem;border-top:3px double #2B4FB3}
+.ltotal b{font-family:Caveat,cursive;font-weight:500;font-size:2rem;color:#2B4FB3}
+#listen[hidden]{display:none}
+@media (max-width:63.99rem){.cast{padding-right:3.6rem}}
 </style>
 </head>
 <body>
@@ -207,6 +230,8 @@ main{padding:0}
   <button class="chip" data-who="dad" aria-expanded="false" aria-label="Dad"></button>
   <button class="chip" data-who="giles" aria-expanded="false" aria-label="Giles"></button>
   <button class="chip" data-who="dev" aria-expanded="false" aria-label="Dev"></button>
+  <button class="chip" data-who="sam" aria-expanded="false" aria-label="Sam"></button>
+  <button class="chip" data-who="carol" aria-expanded="false" aria-label="Carol"></button>
 </nav>
 <div class="card" id="card" hidden role="status"></div>
 <button id="listen" aria-label="Listen to this chapter" aria-pressed="false">
@@ -329,9 +354,216 @@ main{padding:0}
   <p>He doesn't say anything. He gets a custard cream out of his top pocket and gives me half.</p>
   <p>It is the first true thing I have said to anyone since March.</p>
 
+</div>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter two</p>
+  <h2>The first of the month</h2>
+</section>
+<div class="col">
+  <h2>Six o'clock</h2>
+  <p>I tell Giles at six, when he gets in. I have had four hours to practise and I still say it like a weather report.</p>
+  <p>He puts his keys down very slowly. Then he is across the room and I am inside his coat, and he smells of the train and of the mints he has instead of opinions.</p>
+  <p>Oh, Nell, he says. Oh, darling.</p>
+  <p>He is perfect. That is the trouble with him. He cancels his week. He rings his mother to move Sunday. He finds my black dress, the one from his cousin's wedding, and he irons it, and hangs it on the back of the door where I can see it being ready.</p>
+  <p>He books two tickets to Thornsea. He shows me on his phone. Forward-facing, with a table.</p>
+  <p>I look at the two tickets and I think about Giles on the seafront at home in his good coat. I think about somebody telling him. It wouldn't take long. It would take about as far as the Co-op.</p>
+  <p>I'd rather go on my own, I say.</p>
+  <p>He looks at me the way he looks at a restaurant bill that's wrong. Not angry. Just sure there has been a mistake.</p>
+  <p>You shouldn't be alone for this.</p>
+  <p>I won't be. It's Thornsea. I'll be the least alone I have ever been.</p>
+  <p>He is hurt. He folds it up small and puts it away, the way he does. He cancels one ticket and keeps the table seat for me.</p>
+  <p>I'd like him better if he'd shouted.</p>
+
+  <h2>Wednesday</h2>
+  <p>On Wednesday I go to work.</p>
+  <p>I don't know what else to do. I pack the brushes. I walk the thirty-five minutes. I sit down in aisle fourteen with my back against the trade emulsion and I look at the whites, and for the first time in seven months they are only tins.</p>
+  <p>Dev comes at eleven with the tea. He has brought two.</p>
+  <p>He lowers himself down, bad knee first, and we drink them without talking, like men at a bus stop.</p>
+  <p>When's the funeral, he says.</p>
+  <p>Thursday week.</p>
+  <p>You going up before?</p>
+  <p>Saturday. There's something coming in the post I've to wait for.</p>
+  <p>He nods as if that's a reason. Then he reaches up to the shelf behind my head and takes down a tester pot, one of the little ones, two pounds fifty, and puts it in my hand. It's the one that's mostly yellow.</p>
+  <p>For the road, he says. I'll square it with the till.</p>
+  <p>It is the first paint anyone has given me in two years that I haven't had to lie for.</p>
+
+  <h2>Saturday</h2>
+  <p>It lands at ten past nine.</p>
+  <p>Giles gets to the mat before I do. He brings the post in fanned out like a hand of cards. He is talking about eggs, and then he stops talking about eggs.</p>
+  <p>There's one for you, he says. Nell. It's your mum's writing.</p>
+  <p>He has gone the colour of the milk he's holding. I take it off him. It weighs nothing. It has a second-class stamp and my name on the front in blue biro, with the two Ls leaning into each other, the way she does them. Did them.</p>
+  <p>I could not open it. That's allowed. I could put it in the jar as it is.</p>
+  <p>I open it.</p>
+  <p>Twenty pounds, folded in three.</p>
+  <p>I turn the envelope over to the flap, where it says for paints. It has said for paints a hundred and eighty times. I could forge it.</p>
+</div>
+
+<figure class="fig">
+  <div class="flap" role="img" aria-label="The back of an envelope. Written on the flap in blue biro: for paints. Underneath, smaller: and ask Maureen.">
+    <svg viewBox="0 0 400 210" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L200 150 L400 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <span class="l1">for paints</span>
+    <span class="l2">and ask Maureen.</span>
+  </div>
+  <figcaption>Fifteen years, two words. Then, the day before she died, five.</figcaption>
+</figure>
+
+<div class="col">
+  <p>My mother does not write things down. She didn't write in my birthday cards. She bought the ones with the verse already in.</p>
+  <p>She has written me three more words than she ever has, and I don't know a Maureen.</p>
+  <p>What does it say, Giles asks.</p>
+  <p>For paints, I say.</p>
+  <p>I put the twenty in the jar. That makes twenty-five. I put the envelope in my bra, which is where my mother kept the housekeeping, and I go and pack.</p>
+
+  <h2>End of the line</h2>
+  <p>Thornsea is where the train gives up. Everyone else gets off two stops before. I ride the last bit alone at my table for one, with the heating on full, and then there it is. The gasworks. The caravans. The sea.</p>
+  <p>Nothing has moved. The pier is still shut. The roof of the pavilion is still that green, the green copper goes when nobody looks after it. I look at it for longer than I mean to. Then I pick up my bag.</p>
+  <p>It's nine minutes from the station to the shop. I do it in twenty, by the back streets, with my hood up, like a woman who owes money.</p>
+</div>
+
+<figure class="fig">
+  <img class="painting" src="art/harrows.jpg" width="1360" height="768" alt="An impressionist oil painting of a chip shop at night seen from across a wet street, its steamed window blazing orange, with the blurred shape of a woman in a yellow apron inside." draggable="false">
+  <figcaption><b>Harrow's, from across the road.</b> Oil on board, 2019. I sold the other ten from that summer. Nobody wanted this one. Too orange, they said.</figcaption>
+</figure>
+
+<div class="col">
+  <p>The lights are on. It's Saturday teatime and there's a queue to the door. Through the steam I can see my father at the range in his whites, because my mother has been dead four days and that is four days' takings.</p>
+  <p>I go round the back.</p>
+  <p>He looks up when the door goes. He looks at my bag, and my hair, and then at the clock.</p>
+  <p>You've missed the rush, he says.</p>
+  <p>Then he takes my mother's apron off the hook and holds it out to me. It's yellow. It still has a biro in the pocket.</p>
+  <p>I'd like to tell you I said something. I'd like to tell you I said, she isn't cold yet. Or, I'm your daughter, not your staff. Or just, no.</p>
+  <p>I put it on.</p>
+
+  <h2>Open or wrapped</h2>
+  <p>I haven't done this in sixteen years and my hands know all of it. Scoop, shake, paper, fold, fold, tuck. Salt and vinegar? Open or wrapped?</p>
+  <p>They come up to the counter one at a time, and every one of them has to decide what face to make.</p>
+  <p>Mr Aldous from the bookies does sorrow. Sorry for your loss, love, she was a lovely woman, large haddock and a pickled egg.</p>
+  <p>Two girls I was at school with do nothing at all. They read the menu board over my head as if it might have changed.</p>
+  <p>A woman I don't know says, you're the daughter. And then: the one that went. Not unkindly. The way you'd say, the one with the limp.</p>
+  <p>And a boy of about nine says, loudly, to his nan: is that the lady who.</p>
+  <p>Chips, Kyle, says his nan. What do you want on your chips.</p>
+  <p>Dad says nothing through any of it. He fries. Every so often I feel him look at how much I'm putting in the bag.</p>
+  <p>The last one in, at five to nine, is Mrs Pell from the launderette. Seventy-nine, a rain hat, a face like a shut purse. She has had a small cod and chips from this shop every Saturday of my life.</p>
+  <p>She doesn't make a face. She looks at me for as long as it takes Dad to batter the fish. She looks at the apron.</p>
+  <p>Small cod, Maureen? Dad says.</p>
+  <p>I drop the scoop.</p>
+  <p>Mrs Pell watches me pick it up. She pays in coins, counted out exact. And as she takes the parcel off me she says, low, so it goes under the noise of the fryer:</p>
+  <p>Not here.</p>
+  <p>Then she's gone, and Dad has turned the sign round, and he is opening the till.</p>
+  <p>He counts it twice.</p>
+</div>
+</article>
+
+<article data-noaudio>
+<section class="chap">
+  <p class="chapno">Chapter three</p>
+  <h2>Thursday</h2>
+</section>
+<div class="col">
+  <h2>Ten to five</h2>
+  <p>I sleep in my old room, under a duvet cover with horses on. Mum's door is shut. Dad's door is shut. They have had separate rooms since I was eleven and nobody has ever said the word separate.</p>
+  <p>I don't sleep. I lie there with the envelope and the tester pot on the pillow next to me, like the world's worst still life.</p>
+  <p>At ten to five somebody lets themselves in at the back. A key. The door. The door again. Then a crate going down on the tiles.</p>
+  <p>I know the footsteps. That's the humiliating part. Seven years, and I know them the way you know a song you hate.</p>
+  <p>I go down in the horse duvet.</p>
+  <p>He has his back to me, stacking. He's broader. There's grey in his hair, a bit, at the sides. It suits him, which is annoying.</p>
+  <p><span class="who" data-who="sam">Sam</span>, I say.</p>
+  <p>He doesn't jump. He sets the crate down straight. Then he turns round, and there it is, the whole of his face, and I have to look at the haddock.</p>
+  <p>I do this with everyone. Sam Reid is verdigris. He's the green on the roof of the pier pavilion. It's what copper does when you leave it out in the weather for fifteen years.</p>
+  <p>Nell, he says.</p>
+  <p>That's all, for a bit. The fridge hums.</p>
+  <p>I'm sorry about your mum, he says. I mean it. She was.</p>
+  <p>He stops. He does something with his jaw.</p>
+  <p>She was good to me, he says. When she'd no reason to be.</p>
+  <p>I want to ask what that means. I want to ask why my mother, who crossed the road to avoid a fuss, was good to the man who was half of the biggest fuss this town has had since the pier fire.</p>
+  <p>How's Edie, I say.</p>
+  <p>Seven. Bossy. He nearly smiles. She wants to be a vet or a lorry.</p>
+  <p>And Jess.</p>
+  <p>The nearly-smile goes. Jess is all right, he says. Jess'll be there Thursday. I thought you should know that before you walked in.</p>
+  <p>Thank you.</p>
+  <p>He picks up the empty crate. At the door he stops, with his back to me again. Which is how I painted him, because it was the only way I could bear to.</p>
+</div>
+
+<figure class="fig">
+  <img class="painting" src="art/sam.jpg" width="1360" height="768" alt="An impressionist oil painting of a man seen from behind on a harbour quay at dawn, beside a white van and fish crates, with a green-roofed pier pavilion in the distance." draggable="false">
+  <figcaption><b>Sam, the harbour, five in the morning.</b> Oil on board, 2019. Never shown. I told Giles it was a study of a van.</figcaption>
+</figure>
+
+<div class="col">
+  <p>She said you'd come back, he says. Your mum. Last month. I said you wouldn't. She said, she will when she has to, and then you're to be kind to her, Samuel, and you're to keep your mouth shut.</p>
+  <p>About what?</p>
+  <p>He looks at me then. Properly.</p>
+  <p>I can't, he says. I promised her. Ask me anything else.</p>
+  <p>All right. Do you know a Maureen?</p>
+  <p>And Sam Reid, who has never been able to lie to me, who is the worst liar I have ever taken my clothes off for, picks up his crate and says, I've got to get to Whitby.</p>
+
+  <h2>Eleven o'clock</h2>
+  <p>St Mary's is full. She fed this town for thirty-five years and people will come out for that.</p>
+  <p>Dad has a new tie. He stands at the church door and takes people's hands in both of his and says, she'd have been touched, she'd have been so touched. I have never heard him say touched. He has been practising.</p>
+  <p>I sit at the front, on my own side of him, in Giles's ironing.</p>
+  <p>Jess comes in during the first hymn. I don't turn round. I don't need to. The whole church turns round for me and then turns back, like wheat. She sits four rows behind with Edie, who is wearing a coat with ears.</p>
+  <p>I keep my eyes on the coffin. It's pale wood. It's the cheapest one that doesn't look it. I know that because Dad told me the price in the car.</p>
+  <p>And that's when I see them.</p>
+  <p>Second pew on the left, where family would sit if we had any left who were speaking. Six women in a row. Mrs Pell, in the rain hat. Old Dot Hargreaves, who is eighty-six and who I thought had died. The nurse who did my jabs at school. Priti from the chemist. A girl of about twenty with pink hair, crying like a tap.</p>
+  <p>And at the end, in a mac the colour of seaside rock, my <span class="who" data-who="carol">Auntie Carol</span>, who my mother has not spoken to since 2011.</p>
+  <p>Every one of them is wearing something yellow. A scarf. A brooch. A cardigan. The girl has yellow nails.</p>
+  <p>Not yellow. Yellow's cheerful. This is yellow with brown in it and a bit of green. It's curry sauce. It is my mother's exact colour, and I have never told another living soul what that is.</p>
+
+  <h2>The Anchor</h2>
+  <p>The wake is at the Anchor. There are egg sandwiches and a quiche the size of a drain cover.</p>
+  <p>Dad stands up with a glass. He says a few words. He says Linda was the heart of the business. He says she never wanted for anything, and I watch Auntie Carol put her sandwich down.</p>
+  <p>Then he says it, to the whole room, in case anyone was wondering.</p>
+  <p>She's left nothing to sort out, bless her. Not a penny, not a paper. Thirty-five years and she never had so much as a post office book. So there'll be no fuss. I'll see to it all.</p>
+  <p>He looks pleased. He looks like a man reading out a good week.</p>
+  <p>People are kind to me in the wrong order. Mr Aldous tells me she was a saint. A man with a book of raffle tickets tells me she owed two pounds.</p>
+  <p>Jess doesn't speak to me. She stands by the fruit machine with her back straight and lets me watch her not do it.</p>
+  <p>Edie comes over on her own, though. She looks up at me and says, are you the painting lady? My dad's got one of yours in the van. Then she is fetched.</p>
+  <p>I go to the toilets. I get the envelope out of my bra and read it again, as if it might have grown a sentence.</p>
+  <p>When I come out, Mrs Pell is waiting by the cigarette machine with her coat already on.</p>
+  <p>You've your mother's hands, she says. I noticed with the scoop.</p>
+  <p>She said to ask you.</p>
+  <p>I know what she said. I was sat next to her when she wrote it.</p>
+  <p>Ask you what?</p>
+  <p>Mrs Pell looks across the room at my father, who is being bought a drink.</p>
+  <p>Seven o'clock, she says. Tonight. Over my shop. The side door, it sticks. Bring biscuits. Not custard creams, Dot can't.</p>
+  <p>It's her funeral, I say. It's today.</p>
+  <p>It's Thursday, says Mrs Pell. She'd be furious.</p>
+
+  <h2>Over Pell's</h2>
+  <p>The side door sticks. The stairs smell of hot cotton and other people's sheets.</p>
+  <p>At the top there is a room I never knew was there. A gas fire. A table with a cloth on. Seven chairs, and six women in them with the yellow still on, and a teapot in a cosy.</p>
+  <p>The seventh chair is empty. There's a cushion on it that I recognise from our sofa.</p>
+  <p>Nobody is knitting. There isn't a needle in the room.</p>
+  <p>What there is, open in the middle of the table, is a book. One of the long hard-backed ones, the kind we used for the stock. Mum's writing, all down the left. And across every page, in coloured pencil, shaded as carefully as a child's map, there are bars. Dozens of them. Blues, greens, a red, one long patient orange. Each with a name beside it in her leaning Ls.</p>
+  <p>I know what I'm looking at before I know what it is. It's a palette. She has given everything a colour, and she has named them the way I do. Not blue: Monday's sea. Not red: saveloy.</p>
+  <p>I get that from her. I always thought I got it from nowhere.</p>
+  <p>Sit down, love, says Auntie Carol. Her voice goes on the love.</p>
+  <p>I don't sit. I look at the bottom of the page, where the bars stop. There's a line ruled in biro, twice, and under it a number.</p>
+</div>
+
+<figure class="fig">
+  <div class="ledger" role="img" aria-label="A page from a ledger. Seven hand-shaded coloured pencil bars of different lengths, each with a handwritten colour name, above a double ruled line and a total of 131,412 pounds and 7 pence.">
+    <div class="lrow"><span>Monday's sea</span><i style="--w:82%;--c:#2E73C8"></i></div>
+    <div class="lrow"><span>Pier roof</span><i style="--w:64%;--c:#2FA39A"></i></div>
+    <div class="lrow"><span>Good butter</span><i style="--w:47%;--c:#E9C95A"></i></div>
+    <div class="lrow"><span>Saveloy</span><i style="--w:22%;--c:#E2452E"></i></div>
+    <div class="lrow"><span>Nan's hallway</span><i style="--w:38%;--c:#8FA86A"></i></div>
+    <div class="lrow"><span>Rock</span><i style="--w:15%;--c:#F26FA6"></i></div>
+    <div class="lrow"><span>Slow orange</span><i style="--w:96%;--c:#F08A24"></i></div>
+    <div class="ltotal"><span>all seven of us</span><b>£131,412.07</b></div>
+  </div>
+  <figcaption>I read it three times. Then I look at the six of them, and the empty chair, and the teapot.</figcaption>
+</figure>
+
+<div class="col">
+  <p>My mother never knitted a thing in her life.</p>
+
   <div class="end">
-    <p class="note">End of chapter one.</p>
-    <button class="next" disabled>Chapter two is being written</button>
+    <p class="note">End of part one.</p>
+    <button class="next" disabled>Part two is being written</button>
   </div>
 </div>
 </article>
@@ -356,7 +588,7 @@ function hexToHsl(hex){
 // one painted swatch per person, used for their chip and their colour sample
 const css = getComputedStyle(document.documentElement);
 let rules = '';
-['nell','mum','dad','giles','dev'].forEach((id, n) => {
+['nell','mum','dad','giles','dev','sam','carol'].forEach((id, n) => {
   const [h, s, l] = hexToHsl(css.getPropertyValue('--' + id).trim());
   const c = document.createElement('canvas'); c.width = c.height = 160;
   const ctx = c.getContext('2d'), r = rng(11 + n * 97);
@@ -381,7 +613,9 @@ const cast = {
   mum:   ['Mum', 'Curry sauce', 'Linda Harrow. Thirty-five years in the chip shop. Yellow with brown in it: lovely while it\u2019s warm.'],
   dad:   ['Dad', 'Inside of a teapot', 'Keith Harrow. Counts the till twice.'],
   giles: ['Giles', 'Double cream', 'My fianc\u00e9. Thirty-nine. Has never once raised his voice.'],
-  dev:   ['Dev', 'Traffic cone', 'Brings me a tea at eleven. Doesn\u2019t know my surname.']
+  dev:   ['Dev', 'Traffic cone', 'Brings me a tea at eleven. Doesn\u2019t know my surname.'],
+  sam:   ['Sam', 'Verdigris', 'Sam Reid. Delivers the fish. The green that copper goes when it\u2019s left out in the weather.'],
+  carol: ['Auntie Carol', 'Seaside rock', 'Mum\u2019s sister. They hadn\u2019t spoken since 2011.']
 };
 const card = document.getElementById('card');
 const chips = [...document.querySelectorAll('.chip')];
@@ -427,6 +661,7 @@ function show(){
   bar.style.width = (pages > 1 ? page / (pages - 1) * 100 : 0) + '%';
   if (typeof booted !== 'undefined' && booted) try { localStorage.setItem('own.ch1.at', String(units.indexOf(firstOnPage()))); } catch (e) {}
   arrive();
+  if (typeof units !== 'undefined' && typeof voice !== 'undefined') listen.hidden = firstOnPage().t < 0 && voice.paused;
 }
 function layout(){
   // keep her place by paragraph while the pages are re-cut
@@ -483,6 +718,7 @@ const units = []; let track = -1, nowReading = null, raf = 0;
   const norm = s => s.toLowerCase().replace(/’/g, "'").replace(/[^a-z0-9']+/g, ' ').trim().split(' ').filter(Boolean);
   let t = 0; const at = {};
   flow.querySelectorAll('.cold p:not(.note), .open h1, .open .chapter, .memory p, article h2, article .col > p').forEach(el => {
+    if (el.closest('[data-noaudio]')){ units.push({el, t: -1, start: 0, end: 0}); return; }
     if (el.closest('.memory')) t = 1; else if (el.tagName === 'H2') t = t < 2 ? 2 : t + 1;
     const said = norm(el.textContent), script = WORDS[t]; let i = at[t] || 0;
     // line the paragraph up with the recording by its first word, tolerating small slips
@@ -514,6 +750,7 @@ async function load(t, at, play){
 function seekToPage(){
   if (voice.paused && track < 0) return;
   const u = firstOnPage(), playing = !voice.paused, at = Math.max(0, u.start - .15);
+  if (u.t < 0){ voice.pause(); stopUi(); track = -1; listen.hidden = true; return; }
   if (u.t === track && voice.duration) voice.currentTime = at; else load(u.t, at, playing);
   mark(playing ? u : null);
 }
