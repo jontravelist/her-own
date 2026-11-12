@@ -80,9 +80,9 @@ figcaption{margin-top:.9rem;max-width:var(--read)}
 }
 .chip{
   width:2.2rem;height:2.2rem;flex:none;border-radius:3px;border:1.5px dashed var(--line);background:transparent;
-  padding:0;cursor:pointer;transition:background .6s,border-color .6s,transform .2s;
+  padding:0;cursor:pointer;transition:transform .2s;
 }
-.chip.met{background:var(--c) var(--tex) center/cover;border-color:transparent;filter:url(#rough)}
+.chip.met{background:var(--c) var(--tex) center/cover;border-color:transparent;border-radius:5px 3px 6px 3px}
 .chip[aria-expanded=true]{transform:translateY(-4px)}
 .chip:focus-visible,.next:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .chip:not(.met){cursor:default}
@@ -218,6 +218,25 @@ main{padding:0}
 .ltotal b{font-family:Caveat,cursive;font-weight:500;font-size:2rem;color:#2B4FB3}
 #listen[hidden]{display:none}
 @media (max-width:63.99rem){.cast{padding-right:3.6rem}}
+
+/* chapters menu */
+#toc{position:fixed;z-index:8;bottom:calc(.5rem + env(safe-area-inset-bottom,0px));left:calc(.75rem + env(safe-area-inset-left,0px));
+  width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);
+  display:grid;place-items:center;cursor:pointer}
+#toc svg{fill:currentColor}
+#toc:focus-visible{outline:3px solid var(--note);outline-offset:3px}
+#menu{position:fixed;z-index:9;left:.75rem;bottom:calc(3.9rem + env(safe-area-inset-bottom,0px));width:min(20rem,calc(100vw - 1.5rem));
+  background:var(--sheet);border-radius:6px;padding:.4rem;box-shadow:0 14px 40px rgba(42,34,85,.3);display:grid;gap:.15rem}
+#menu[hidden]{display:none}
+#menu button{font:inherit;text-align:left;background:none;border:0;border-radius:4px;padding:.6rem .8rem;cursor:pointer;color:var(--ink);
+  display:grid;gap:.05rem;line-height:1.25}
+#menu button small{font-size:.8rem;color:var(--ink-soft)}
+#menu button b{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:1.15rem}
+#menu button[aria-current=true]{background:color-mix(in srgb,var(--giles) 45%,transparent)}
+#menu button:focus-visible{outline:3px solid var(--note);outline-offset:-3px}
+@media (max-width:63.99rem){.cast{padding-left:3.6rem;gap:.4rem}.cast .chip{width:1.9rem;height:1.9rem}}
+@media (min-width:64rem){#toc{bottom:auto;top:1.2rem;left:auto;right:5.2rem;width:2.9rem;height:2.9rem}
+  #menu{left:auto;right:1.5rem;bottom:auto;top:4.8rem}}
 </style>
 </head>
 <body>
@@ -238,6 +257,10 @@ main{padding:0}
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
 </button>
 <audio id="voice" preload="none"></audio>
+<button id="toc" aria-label="Chapters" aria-expanded="false" aria-controls="menu">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h10v2H4z"/></svg>
+</button>
+<div id="menu" hidden></div>
 
 <main><div id="stage"><div class="page" id="book"><div class="flow" id="flow">
 <section class="cold col">
@@ -676,7 +699,7 @@ function layout(){
 function turn(dir, auto){
   const to = page + dir;
   if (busy || to < 0 || to >= pages) return;
-  closeCard();
+  closeCard(); if (typeof closeMenu === 'function') closeMenu();
   if (!auto) setTimeout(() => window.seekToPage && seekToPage(), 0);
   if (still.matches){ page = to; show(); return; }
   busy = true;
@@ -781,6 +804,30 @@ listen.addEventListener('click', e => {
   const u = firstOnPage(), at = Math.max(0, u.start - .15);
   if (u.t === track && voice.duration){ voice.currentTime = at; voice.play(); } else load(u.t, at, true);
 });
+
+// ---- chapters menu ----
+const toc = document.getElementById('toc'), menu = document.getElementById('menu');
+const chapters = [{no: 'Chapter one', title: 'Vinegar', el: flow.querySelector('.cold')},
+  ...[...flow.querySelectorAll('.chap')].map(c => ({no: c.querySelector('.chapno').textContent, title: c.querySelector('h2').textContent, el: c}))];
+function closeMenu(){ menu.hidden = true; toc.setAttribute('aria-expanded', 'false'); }
+function openMenu(){
+  const here = chapters.filter(c => pageOf(c.el) <= page).pop();
+  menu.innerHTML = '';
+  chapters.forEach(c => {
+    const b = document.createElement('button');
+    b.innerHTML = `<small>${c.no}</small><b>${c.title}</b>`;
+    if (c === here) b.setAttribute('aria-current', 'true');
+    b.addEventListener('click', e => {
+      e.stopPropagation(); closeMenu(); closeCard();
+      page = pageOf(c.el); show(); seekToPage();
+    });
+    menu.append(b);
+  });
+  menu.hidden = false; toc.setAttribute('aria-expanded', 'true');
+}
+toc.addEventListener('click', e => { e.stopPropagation(); closeCard(); menu.hidden ? openMenu() : closeMenu(); });
+document.addEventListener('click', closeMenu);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
 // ---- start up: come back to the paragraph she was on ----
 let booted = false;
